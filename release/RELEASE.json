@@ -3,15 +3,18 @@
   "product": "FM-1_92201029",
   "display": "BB-BOB R34",
   "file": "BB-BOB-r34-hub.fwsc",
-  "package_sha256": "51b48377581fdd6b115ecd204a6550a9d7d3dbf970c02250d243407314c72004",
+  "package_sha256": "8c7d923c52b05fa49df9469398829dc61d73f1fd2fba1d783b53e2eb67ff7ba3",
   "base_file": "BB-BOB-r34-app-base.fwsc",
-  "base_sha256": "04b42c7b28d3013b6802b044661d48ba47cc5e7d8ce486e90f9f12e7523939cb",
-  "app_bytes": 559588,
-  "app_sha256": "c34852cde4775d16a15711df84a57b5d0f38c94d6dd1e74f0f4e5422bef2bdf5",
+  "base_sha256": "fc48941d00cef5b611cc5b699335c832af22c8836eb9e5a59ab0963b4dc77fd7",
+  "app_bytes": 557040,
+  "app_sha256": "f57e6c6b0a2f5aa98785b043e6921c07c1c25a9cea223355a6dd07a59e17a8b2",
   "loader_file": "BB-BOB-r34-loader.bin",
   "loader_sha256": "b9958031cda0b2dbef95add5c9e0b5f8df3617eac8ae90f313bf98294b3b0aa4",
   "timbres_sha256": "37cef61ad3d458bfdcfddced93dea3bb41bc530dde6d49067fd35cea8320e4de",
   "art_sha256": "05a66dee28cdc3d4ba4e5696236ee069b4473695803dd0d775e0224bb7c09403",
   "banks_in_fwsc": true,
-  "device_contacted": false
+  "device_contacted": true,
+  "hardware_tested": true,
+  "hardware_cycle": "FM-1_015 -> FM-1_92201029 -> FM-1_015 -> FM-1_92201029",
+  "hardware_tested_on": "2026-11-12"
 }

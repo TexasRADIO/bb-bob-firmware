@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "vendor/fm1/tools"))
 import lz4blk
 from embed_banks import ART_OFFSET, PRODUCT, SLOT_BYTES, TIMBRE_OFFSET, decode, unpack
+from identity import check as check_identity
 
 
 def sha(data):
@@ -22,6 +23,9 @@ def main():
     parser.add_argument("--package", type=Path, required=True)
     parser.add_argument("--manifest", type=Path, required=True)
     args = parser.parse_args()
+    identity = check_identity()
+    if identity["product_id"] != PRODUCT:
+        raise ValueError("package and canonical product identities differ")
     expected = json.loads(args.manifest.read_text())
     payload = unpack(args.package)
     raw = args.package.read_bytes()
@@ -52,6 +56,10 @@ def main():
     app = bytes(area[offset:offset + size]).rstrip(b"\xFF")
     if len(app) != expected["app_bytes"] or sha(app) != expected["app_sha256"]:
         raise ValueError("application mismatch")
+    if PRODUCT.encode("ascii") not in app:
+        raise ValueError("running application does not contain the package product identity")
+    if b"FM-1_92200105" in app:
+        raise ValueError("running application still contains the legacy BB1 identity")
     print(json.dumps({"passed": True, "product": PRODUCT, "package_sha256": sha(raw),
                       "app_sha256": sha(app), "loader_sha256": sha(loader),
                       "timbres_sha256": expected["timbres_sha256"],

@@ -27,6 +27,9 @@ def header(data):
          '#endif\n')
 def check(root=ROOT):
  data=load(root);assert (root/'src/bob_identity.h').read_text()==header(data),'Identity header drift: run tools/identity.py --write'
+ base=(root/'src/bb_base_hw.inc').read_text()
+ assert '#define BB_PACKAGE_ID SW_BOB_PRODUCT_ID' in base,'Firmware handshake must use the generated BB-BOB product identity'
+ assert 'FM-1_92200105' not in base,'Legacy BB1 identity remains in the BB-BOB firmware handshake'
  return data
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--write',action='store_true');a=p.parse_args();data=load()

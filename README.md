@@ -14,12 +14,10 @@ The release contains one Hub-compatible `.fwsc`. It writes the BB-BOB applicatio
 
 ## Hardware verification
 
-The BB-BOB application and matching timbre and art banks have been installed
-and run on a physical FM-1 through the author installer, and the unit was
-returned to BB1 afterwards. The single-package Hub release contains those
-same verified application and bank bytes. Its loader and protected write
-ranges pass the included host simulation; the one-package route has not been
-separately cycled on hardware.
+The exact single-package Hub release has been installed on a physical FM-1.
+It booted as `FM-1_92201029`, returned successfully to official V15, then
+installed and booted again from V15. The package's loader and protected write
+ranges also pass the included host simulation.
 
 ## Build
 

@@ -7,12 +7,9 @@
 #define FELUCCA_UAC 0                    /* no USB audio input (bytes; a later option) */
 #define FELUCCA_OTA 1                    /* M-UPGRADE entry: the way home to BB1 */
 #define FELUCCA_OTA_DRYRUN 0
-/* Package identity answered to the M-UPGRADE handshake. It must equal the marker string of the BB1 1.5
- * package the updater will offer: BB1 1.5 is "FM-1_92200105" (Felucca 1.5.1 upstream is "FM-1_900"). Verified against the exact BB1
- * 1.5 package (INSTALL-GATES.json required_package_sha256) on #80. */
-#ifndef BB_PACKAGE_ID
-#define BB_PACKAGE_ID "FM-1_92200105"   /* BB1 1.5 package marker, verified by Loudoun from 0efa1338… (610,086 B) */
-#endif
+/* Identity answered to the updater handshake. The running application and the
+ * package marker must use the same generated BB-BOB product identity. */
+#define BB_PACKAGE_ID SW_BOB_PRODUCT_ID
 #define FELUCCA_ID BB_PACKAGE_ID
 #define RING_PUBLISH() __asm__ volatile("" ::: "memory")
 /* Writes are confined to M-UPGRADE staging plus the two fixed, host-held bank slots.
