@@ -1,0 +1,8 @@
+{
+  "what": "A 50-tune Western swing groovebox with generated originals, band cues, steel solos and a Then / Now control that brings in acid bass and drum-machine beats.",
+  "author": "Big Beat Studio",
+  "kinds": ["groove", "drums", "synth"],
+  "play": "https://thebigbeat.app/bb-bob/",
+  "image": "media/bb-bob-card.png",
+  "color": "#C94B39"
+}

@@ -1,0 +1,418 @@
+{
+  "historic": true,
+  "review_status": "103 user-kept cuts; 39 failures and pending cuts excluded; wording and speaker attribution remain separate",
+  "calls": [
+    {
+      "id": "call-f524bfdb8605c5a4",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-63f46bdaa3bb0bd9",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-1edc9fc0ede8f5e4",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-ca4df0cb8fa64453",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-ad3d1287d4b4bf77",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-99d1404b58780c35",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-a104722768f68bf3",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-fd3bba48ab8c06ea",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-fe2c5fa54a366f1b",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-b8889f55161431a2",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-039ea6bd32659eb8",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-d091c8f3dd76b348",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-e8668b5568b2f881",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-39eb0ed550bc3ec7",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-1f56892cdda03d48",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-ba7071e453fce6f6",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-378d975a4ea54783",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-289a4dee5dd66a1f",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-2cc10426bfaf4720",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-efd8feb3c778733e",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-9e30b517eeb384a9",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-77c8728c4192c39f",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-303c26250444a201",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-90869fe51dbe8a04",
+      "family": "named_player_cue"
+    },
+    {
+      "id": "call-f34eceb77acbe3c2",
+      "family": "yeah"
+    },
+    {
+      "id": "call-1331371bc542d20f",
+      "family": "yeah"
+    },
+    {
+      "id": "call-9130ee5748b86d8e",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-05c38145d0ae8478",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-2e50e66757cb3346",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-89e7cf8cd123ebbd",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-898508cd177aa1d6",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-a144a8f04c71d7c6",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-e4f7a095e2647903",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-5f018764138b7fe9",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-5d77439e2323d2b7",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-ae415653562565c4",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-69fd6a79f0b3b796",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-a57f1e90e8e247e5",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-f21e343616c11f6e",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-877eb99098d6afae",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-5743e68caae3dfd7",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-c13d38ab6bf72c52",
+      "family": "yeah"
+    },
+    {
+      "id": "call-5d736f721e8f9a7c",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-e6788d5df81bd52e",
+      "family": "yeah"
+    },
+    {
+      "id": "call-9fd4350c65308fed",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-516d0094cfa96b49",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-831ab14fc69b8c82",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-0cc453073f5196c0",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-60105bad90d9079d",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-01604ff27313f7b4",
+      "family": "yeah"
+    },
+    {
+      "id": "call-0665469f10345909",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-3dfc0ba07c44015c",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-93c78586d37396b0",
+      "family": "yeah"
+    },
+    {
+      "id": "call-c311cea4560f79a6",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-bdf93bf66cb6e06c",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-f3ce0d29728942a1",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-62614eabb802cc23",
+      "family": "encouragement"
+    },
+    {
+      "id": "call-c91e329461f6aed9",
+      "family": "yeah"
+    },
+    {
+      "id": "call-23184823db432042",
+      "family": "other_call"
+    },
+    {
+      "id": "call-d60b0da6b39675a4",
+      "family": "other_call"
+    },
+    {
+      "id": "call-8336b68a64ff41fa",
+      "family": "other_call"
+    },
+    {
+      "id": "call-c8d264fdb4c2cd44",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-c271f1805e4b67f1",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-07f364f88742ae39",
+      "family": "other_call"
+    },
+    {
+      "id": "call-a0e45d9a2b4dde4a",
+      "family": "other_call"
+    },
+    {
+      "id": "call-dc6b54c7074e7c4a",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-4aa756f7d01aaff3",
+      "family": "other_call"
+    },
+    {
+      "id": "call-a12a191e39b25d31",
+      "family": "other_call"
+    },
+    {
+      "id": "call-a70f61240f4b3d6f",
+      "family": "other_call"
+    },
+    {
+      "id": "call-78dceeab7e7e073e",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-d9f79b44d43ac2e3",
+      "family": "other_call"
+    },
+    {
+      "id": "call-1611920248f6fedf",
+      "family": "other_call"
+    },
+    {
+      "id": "call-aefd5200c302a9db",
+      "family": "other_call"
+    },
+    {
+      "id": "call-6547a818173f06d2",
+      "family": "other_call"
+    },
+    {
+      "id": "call-6b803f3b96801f05",
+      "family": "other_call"
+    },
+    {
+      "id": "call-b7b91569bb5abfb1",
+      "family": "other_call"
+    },
+    {
+      "id": "call-adac88036d0f9dff",
+      "family": "other_call"
+    },
+    {
+      "id": "call-61b1bacdb5519ca0",
+      "family": "other_call"
+    },
+    {
+      "id": "call-1b1da2784576f238",
+      "family": "other_call"
+    },
+    {
+      "id": "call-cc733fb07c273b93",
+      "family": "other_call"
+    },
+    {
+      "id": "call-6da6ed8ad834125e",
+      "family": "other_call"
+    },
+    {
+      "id": "call-cc2e34cd8ecd51f4",
+      "family": "other_call"
+    },
+    {
+      "id": "call-65993d597e347dd2",
+      "family": "other_call"
+    },
+    {
+      "id": "call-69087da4e17be8db",
+      "family": "other_call"
+    },
+    {
+      "id": "call-4fdeadb3be8b7466",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-36380d85663c2cbb",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-cc2b27848af6628b",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-38c0e31c0be342e9",
+      "family": "other_call"
+    },
+    {
+      "id": "call-93182493a4a24470",
+      "family": "other_call"
+    },
+    {
+      "id": "call-94bb483a9ce3b7c4",
+      "family": "other_call"
+    },
+    {
+      "id": "call-af26be27069d34ef",
+      "family": "other_call"
+    },
+    {
+      "id": "call-1144fd3674bb4b71",
+      "family": "other_call"
+    },
+    {
+      "id": "call-6e386f610d42a28c",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-0a91e24fcd7b4863",
+      "family": "signature_aah_haa"
+    },
+    {
+      "id": "call-c94d8a127ce3140a",
+      "family": "other_call"
+    },
+    {
+      "id": "call-24fdbd24ce1ff4c6",
+      "family": "other_call"
+    },
+    {
+      "id": "call-35f6f1a5fb6e7042",
+      "family": "other_call"
+    },
+    {
+      "id": "call-a40158835a63c638",
+      "family": "yeah"
+    },
+    {
+      "id": "call-b91c519d13a6cc47",
+      "family": "other_call"
+    },
+    {
+      "id": "call-e572d5ff9f72cac3",
+      "family": "other_call"
+    },
+    {
+      "id": "call-78d5c0698b8a00ee",
+      "family": "other_call"
+    },
+    {
+      "id": "call-4c978a9d973ce851",
+      "family": "other_call"
+    },
+    {
+      "id": "call-d9ac8605643daf76",
+      "family": "other_call"
+    }
+  ]
+}

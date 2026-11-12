@@ -1,0 +1,17 @@
+{
+  "schema": "bb-bob-hub-release/v1",
+  "product": "FM-1_92201029",
+  "display": "BB-BOB R34",
+  "file": "BB-BOB-r34-hub.fwsc",
+  "package_sha256": "51b48377581fdd6b115ecd204a6550a9d7d3dbf970c02250d243407314c72004",
+  "base_file": "BB-BOB-r34-app-base.fwsc",
+  "base_sha256": "04b42c7b28d3013b6802b044661d48ba47cc5e7d8ce486e90f9f12e7523939cb",
+  "app_bytes": 559588,
+  "app_sha256": "c34852cde4775d16a15711df84a57b5d0f38c94d6dd1e74f0f4e5422bef2bdf5",
+  "loader_file": "BB-BOB-r34-loader.bin",
+  "loader_sha256": "b9958031cda0b2dbef95add5c9e0b5f8df3617eac8ae90f313bf98294b3b0aa4",
+  "timbres_sha256": "37cef61ad3d458bfdcfddced93dea3bb41bc530dde6d49067fd35cea8320e4de",
+  "art_sha256": "05a66dee28cdc3d4ba4e5696236ee069b4473695803dd0d775e0224bb7c09403",
+  "banks_in_fwsc": true,
+  "device_contacted": false
+}

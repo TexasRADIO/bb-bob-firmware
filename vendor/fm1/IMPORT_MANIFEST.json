@@ -1,0 +1,172 @@
+{
+  "upstream": "https://github.com/hugelton/Felucca",
+  "revision": "ef1f561b6b105f20350f6b1eac0dc0789a357f00",
+  "license": "GPL-3.0-only",
+  "files": [
+    {
+      "source": "firmware/hal/fm1_adc.h",
+      "destination": "hal/fm1_adc.h",
+      "sha256": "1917870bd802de9134d33335efbcf886b296705dff06688925fd7325589c0c1a"
+    },
+    {
+      "source": "firmware/hal/fm1_audio.h",
+      "destination": "hal/fm1_audio.h",
+      "sha256": "22351440699748546e932098e3016c618d6137dd0ae34557e08a107641d4e62e"
+    },
+    {
+      "source": "firmware/hal/fm1_cc.h",
+      "destination": "hal/fm1_cc.h",
+      "sha256": "46c533a0926ba9298ae36705f857ed609a61b95511ba7f0d1800857b4760dd73"
+    },
+    {
+      "source": "firmware/hal/fm1_flash.h",
+      "destination": "hal/fm1_flash.h",
+      "sha256": "b5d63acad1951bab0236991e56762c95c6eaf0ad94d1ea058cb9f0281059b693"
+    },
+    {
+      "source": "firmware/hal/fm1_gpio.h",
+      "destination": "hal/fm1_gpio.h",
+      "sha256": "5e3937e32a3b4b9b9ae622c5b42c8819ec8a16f2d76dbddec91654703c77a216"
+    },
+    {
+      "source": "firmware/hal/fm1_guard.h",
+      "destination": "hal/fm1_guard.h",
+      "sha256": "6a5ddde30c97ff094ba7f843be53eeafc820caf451fe3270c06a17be178a4608"
+    },
+    {
+      "source": "firmware/hal/fm1_input.h",
+      "destination": "hal/fm1_input.h",
+      "sha256": "67eb28cf2bdb29466a3baf34ea760ba35e4d77c45439ac432ec374c0b99d7621"
+    },
+    {
+      "source": "firmware/hal/fm1_irq.h",
+      "destination": "hal/fm1_irq.h",
+      "sha256": "0b2191dd30b5b992782bc334ec542e1027947124be469e9270962f5ce9e857a8"
+    },
+    {
+      "source": "firmware/hal/fm1_isr.S",
+      "destination": "hal/fm1_isr.S",
+      "sha256": "2aad84e24a51c79b187ef3faf9d1bae108b1389bf78659f6b02dbbd95d8a7d7b"
+    },
+    {
+      "source": "firmware/hal/fm1_lcd_hw.h",
+      "destination": "hal/fm1_lcd_hw.h",
+      "sha256": "9e78a5f9b75fe881d3e90529f39876a322e311d2ae317d068c782bd528b96cff"
+    },
+    {
+      "source": "firmware/hal/fm1_led_anim.h",
+      "destination": "hal/fm1_led_anim.h",
+      "sha256": "4974a444b79c7e8bbcb0224571db5686d57037d963e1e9ec12458e1fa8eb9178"
+    },
+    {
+      "source": "firmware/hal/fm1_sys.h",
+      "destination": "hal/fm1_sys.h",
+      "sha256": "037bc64e65650fb2c8d3a23b218992fad347e9098352aae4938738622af2c224"
+    },
+    {
+      "source": "firmware/hal/fm1_time.h",
+      "destination": "hal/fm1_time.h",
+      "sha256": "22116c4b6a365c8510ba1dab12f0e8a452343a82435abff7640648c630b740fa"
+    },
+    {
+      "source": "firmware/hal/fm1_timer.h",
+      "destination": "hal/fm1_timer.h",
+      "sha256": "d5e89b90035018207264fd89ea2b0988d5d716506df07233c9dd2c39741b71e8"
+    },
+    {
+      "source": "firmware/hal/fm1_uart.h",
+      "destination": "hal/fm1_uart.h",
+      "sha256": "0df7266a58996c688a4279c6b7edbaa7921e18805c8a65f1ff156680b03fcff6"
+    },
+    {
+      "source": "firmware/hal/fm1_usb.h",
+      "destination": "hal/fm1_usb.h",
+      "sha256": "12b9b31bde0dbb15fa15379a215eaec11e882bd33c18f4b250fa9e3a47c202f0"
+    },
+    {
+      "source": "firmware/hal/fm1_vec.S",
+      "destination": "hal/fm1_vec.S",
+      "sha256": "8f9e787871332f522157d561dc3cfe8906ed0abf160139ed5819cfdeab66f01a"
+    },
+    {
+      "source": "firmware/hal/fm1_xip.h",
+      "destination": "hal/fm1_xip.h",
+      "sha256": "dcba6ddb9cd2403e1d97c4db49d836110ef2805d2369db7ed323e3fbe26c56ed"
+    },
+    {
+      "source": "firmware/crt0.S",
+      "destination": "crt0.S",
+      "sha256": "e26b8e38377cd477beaa2f238f5022c6e9d221947fc546d34fe857d9d3add0a0"
+    },
+    {
+      "source": "firmware/app.ld",
+      "destination": "app.ld",
+      "sha256": "46c248b09533d81e645237710ac86ceb132a0e2e9bd3c607026aef5c2be5efe9"
+    },
+    {
+      "source": "firmware/src/lcd.c",
+      "destination": "src/lcd.c",
+      "sha256": "bd2e7421d1e309ba3addd3e7071ef41694fc2083ccf23467cf1b6b99a19bb50b"
+    },
+    {
+      "source": "firmware/src/libc.c",
+      "destination": "src/libc.c",
+      "sha256": "344b09afe33da826feefeb1ea2a1a7c50732f91c133fee30174819645edc131a"
+    },
+    {
+      "source": "LICENSE",
+      "destination": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "source": "firmware/loader/crt0_ldr.S",
+      "destination": "loader/crt0_ldr.S",
+      "sha256": "bd4149b97520d1dcc271f730c5a046b0dbf97909e48e968e0ba18304ffc37841"
+    },
+    {
+      "source": "firmware/loader/ldr_core.c; BB-BOB fixed-bank extension",
+      "destination": "loader/ldr_core.c",
+      "sha256": "63d7849699703d0ed21a6594f3aeff03ae17e0ce2e02f735886968ea96e6e493"
+    },
+    {
+      "source": "firmware/loader/loader.c; BB-BOB fixed-bank range guard",
+      "destination": "loader/loader.c",
+      "sha256": "65f2d059ede65599921714630304d8a37e7e728cf50bc50afe8ab8aca9c5de13"
+    },
+    {
+      "source": "firmware/loader/loader.ld",
+      "destination": "loader/loader.ld",
+      "sha256": "4acae8c9a16cf9a70f53a546f9175b5a86d2bc5cb6bce39513a2ff3c4fdba4ae"
+    },
+    {
+      "source": "tools/fm1pkg_make.py",
+      "destination": "tools/fm1pkg_make.py",
+      "sha256": "443803b77bf3647a65d89c5c27f64a9c57823048c61d51f536abfb36d765baf6"
+    },
+    {
+      "source": "tools/lz4blk.py",
+      "destination": "tools/lz4blk.py",
+      "sha256": "bede501ca8774ba6942b35ad2c43823e9f48f13d0fb001ef9b73cdaf41460e16"
+    },
+    {
+      "source": "LICENSES/Apache-2.0.txt",
+      "destination": "LICENSES/Apache-2.0.txt",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "source": "firmware/src/usb.c",
+      "destination": "src/usb.c",
+      "sha256": "4fc17a5267b80dd1191b7d091cad95468a3358da28bb0663c07a1d6b73c6b284"
+    },
+    {
+      "source": "firmware/src/ota.c",
+      "destination": "src/ota.c",
+      "sha256": "61e53d00615e167f37e9fd762466fbdb54bfb2f965f5ff63f5dbf6cafd2be37e"
+    },
+    {
+      "source": "firmware/src/midi_uart.c",
+      "destination": "src/midi_uart.c",
+      "sha256": "459cf47e648a91523713b27886448d8992ab8629288c76f6e5d317be54c4435f"
+    }
+  ]
+}
