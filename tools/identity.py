@@ -5,14 +5,14 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 def load(root=ROOT):
  data=json.loads((root/'identity.json').read_text());product=data['product_id']
  assert data['schema']=='bb-bob-identity/v1'
- assert data['display_name']=='BB-BOB' and data['family_id']=='01'
+ assert data['display_name']=='BB-BOB' and data['family_id']=='92361'
  assert isinstance(data['revision'],int) and data['revision']>0
  assert data['version']==f"R{data['revision']}"
  assert data['display_version']==data['display_name']+' '+data['version']
  if 'package_name' in data:assert re.fullmatch(r'BB-BOB-r'+str(data['revision'])+r'-[a-z0-9-]+\.fwsc',data['package_name']),'Unsafe or mismatched package filename'
  assert product!='FM-1_900','Vendor default product is forbidden'
  assert not re.fullmatch(r'FM-1_92200[0-9]{3}',product),'BB1 product family is forbidden'
- assert re.fullmatch(r'FM-1_92201[0-9]{3}',product),'Only numeric BB-BOB family01 is approved'
+ assert re.fullmatch(r'FM-1_92361[0-9]{3}',product),'Only the reserved numeric BB-BOB family is approved'
  assert len(product)<=20 and product.isascii()
  assert all((ord(c)+i+1)&255!=0x7d for i,c in enumerate(product)),'Identity marker collision'
  return data

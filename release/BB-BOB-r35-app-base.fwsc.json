@@ -1,0 +1,13 @@
+{
+  "schema": "bb-bob-full-install-app-package/v1",
+  "file": "BB-BOB-r35-app-base.fwsc",
+  "bytes": 610188,
+  "sha256": "a72538c90c3693c82d2a6047c739be677d7da242dc84a400a03fbc59fb5c380d",
+  "app_bytes": 557040,
+  "app_sha256": "9aafd533e4a71108abcc4f783930befb3e2b8a04dcc72a080e14a34ed301836f",
+  "product": "FM-1_92361035",
+  "display": "BB-BOB R35",
+  "loader_sha256": "b9958031cda0b2dbef95add5c9e0b5f8df3617eac8ae90f313bf98294b3b0aa4",
+  "device_contacted": false,
+  "banks_in_fwsc": false
+}

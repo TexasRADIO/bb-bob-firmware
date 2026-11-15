@@ -14,10 +14,11 @@ The release contains one Hub-compatible `.fwsc`. It writes the BB-BOB applicatio
 
 ## Hardware verification
 
-The exact single-package Hub release has been installed on a physical FM-1.
-It booted as `FM-1_92201029`, returned successfully to official V15, then
-installed and booted again from V15. The package's loader and protected write
-ranges also pass the included host simulation.
+The R34 single-package Hub release was installed on a physical FM-1. It booted
+as `FM-1_92201029`, returned successfully to official V15, then installed and
+booted again from V15. R35 reserves the independent BB-BOB identity
+`FM-1_92361035`; its application, loader, banks and protected write ranges are
+rebuilt and checked from the tagged source before release.
 
 ## Build
 

@@ -1,10 +1,10 @@
 .PHONY: package verify test
 
-BASE_PACKAGE ?= release/BB-BOB-r34-app-base.fwsc
+BASE_PACKAGE ?= release/BB-BOB-r35-app-base.fwsc
 TIMBRES ?= release/timbres.bank
 ART ?= release/art.bank
-LOADER ?= release/BB-BOB-r34-loader.bin
-OUTPUT ?= release/BB-BOB-r34-hub.fwsc
+LOADER ?= release/BB-BOB-r35-loader.bin
+OUTPUT ?= release/BB-BOB-r35-hub.fwsc
 
 package:
 	PYTHONDONTWRITEBYTECODE=1 python3 tools/embed_banks.py \

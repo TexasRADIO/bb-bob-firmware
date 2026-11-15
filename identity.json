@@ -1,11 +1,11 @@
 {
   "schema": "bb-bob-identity/v1",
   "display_name": "BB-BOB",
-  "revision": 34,
-  "version": "R34",
-  "display_version": "BB-BOB R34",
-  "product_id": "FM-1_92201029",
-  "family_id": "01",
+  "revision": 35,
+  "version": "R35",
+  "display_version": "BB-BOB R35",
+  "product_id": "FM-1_92361035",
+  "family_id": "92361",
   "reservation_status": "Unique BB-BOB package identity",
-  "package_name": "BB-BOB-r34-hub.fwsc"
+  "package_name": "BB-BOB-r35-hub.fwsc"
 }

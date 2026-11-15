@@ -33,7 +33,7 @@ def verify(package,target):
   logical+=raw[i*48:i*48+47];marker=raw[i*48+47]
   if marker!=125:identity+=chr((marker-i-1)&255)
  logical+=raw[960:]
- assert identity==meta['product']=='FM-1_92201029'
+ assert identity==meta['product']=='FM-1_92361035'
  header=decode(logical[:64]);assert crc(header[2:])==struct.unpack_from('<H',header)[0]
  total,count=struct.unpack_from('<IH',header,4);assert total==len(logical) and count==2 and header[16:22]==b'AC791N'
  entries=logical[64:64+count*80];assert crc(entries)==struct.unpack_from('<H',header,2)[0]
