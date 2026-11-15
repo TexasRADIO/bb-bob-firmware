@@ -1,8 +1,11 @@
 {
-  "what": "A 50-tune Western swing groovebox with generated originals, band cues, steel solos and a Then / Now control that brings in acid bass and drum-machine beats.",
-  "author": "Big Beat Studio",
-  "kinds": ["groove", "drums", "synth"],
-  "play": "https://thebigbeat.app/bb-bob/",
-  "image": "media/bb-bob-card.png",
-  "color": "#C94B39"
+  "what": "A Bob Wills western swing band instrument. Fiddle, steel guitar, piano, bass and drums playing together through reverb and echo. Song arrangement with parts and a Conductor.",
+  "author": "Ole Big Beat / TexasRADIO",
+  "kinds": [
+    "groove",
+    "western swing"
+  ],
+  "play": "https://thebigbeat.app/bob/",
+  "cheat": "https://thebigbeat.app/bob/guide/",
+  "image": "docs/media/bb-bob-240.png"
 }
