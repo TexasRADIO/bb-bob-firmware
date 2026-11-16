@@ -72,7 +72,7 @@ void sw_host_panel_control(uint32_t kind,uint32_t index,int32_t value) {
  if(kind==1)sw_panel_encoder(&host,&panel,index,value);
  if(kind==2)sw_panel_key(&host,&panel,index,value!=0);
  if(kind==3)sw_panel_release(&host,&panel);
- if(kind==4)sw_command(&host,SW_MASTER,value);
+ if(kind==4)sw_panel_master_poll(&host,value);
  host_prepare();
 }
 void sw_host_command(uint32_t command,int32_t value) {

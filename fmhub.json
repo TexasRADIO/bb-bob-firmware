@@ -1,12 +1,13 @@
 {
-  "what": "A 50-tune Western swing groovebox with generated originals, band cues, steel solos and a Then / Now control that brings in acid bass and drum-machine beats.",
+  "what": "A 50-tune Western swing bandstand with generated originals, band cues, steel solos and a Then / Now control that brings in acid bass and drum-machine beats.",
   "author": "Big Beat Studio",
   "kinds": [
     "groove"
   ],
   "play": "https://thebigbeat.app/bb-bob/",
-  "cheat": "https://thebigbeat.app/bb-bob/about/guide.html",
+  "cheat": "https://thebigbeat.app/bb-bob/manual.html",
   "image": "media/bb-bob-card.png",
   "color": "#C94B39",
-  "sounds": "licensed: historical recordings and musical editions; Big Beat Studio accepts responsibility for every included audio asset and will notify the Hub of any rights complaint"
+  "sounds": "licensed: historical recordings and musical editions; Big Beat Studio accepts responsibility for every included audio asset and will notify the Hub of any rights complaint",
+  "editor": "https://thebigbeat.app/editor/?product=5&mode=midi"
 }

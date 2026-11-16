@@ -201,6 +201,7 @@ void sw_panel_tick(sw_panel *p,uint32_t ms) {
  if((p->queued_kind&SWP_APPLIED)&&!p->status_ms)p->queued_kind=SWP_Q_NONE;
 }
 static const char level_notice[]="LEVEL";
+void sw_panel_master_poll(sw_engine *e,int32_t level) {if(level>=0)sw_command(e,SW_MASTER,level);}
 uint32_t sw_panel_level_notice(const sw_panel *p) {return p->notice_ms&&p->notice==level_notice;}
 uint32_t sw_panel_then_now_notice(const sw_panel *p) {return p->notice_ms&&p->notice==then_now_notice;}
 void sw_panel_observe(sw_engine *e,sw_panel *p) {

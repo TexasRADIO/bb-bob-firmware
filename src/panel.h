@@ -49,6 +49,9 @@ void sw_panel_refresh_calls(sw_panel *p);
 /* Foreground display/control observation, not an audio-ISR hook. Target calls
  * this under its existing bounded control lock; drawing remains read-only. */
 void sw_panel_observe(sw_engine *e,sw_panel *p);
+/* ADC sampling is not control activity. Shared by the hardware and host paths;
+ * the observer handles real movement and ignores one-percent ADC chatter. */
+void sw_panel_master_poll(sw_engine *e,int32_t level);
 uint32_t sw_panel_call_slots(const sw_panel *p,uint16_t slots[24]);
 const char *sw_panel_family_name(uint32_t family);
 const char *sw_panel_knob_label(uint32_t page,uint32_t knob);

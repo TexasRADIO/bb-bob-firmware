@@ -1,0 +1,13 @@
+{
+  "schema": "bb-bob-full-install-app-package/v1",
+  "file": "BB-BOB-r37-app-base.fwsc",
+  "bytes": 610188,
+  "sha256": "637a44c7c3e51e68d57cd8e0dbfc67da98ad889f109fd1d5353f91dc6795e8b1",
+  "app_bytes": 566736,
+  "app_sha256": "8783c4aecd231f1b65b285a31d5666154ac7596109a87978604810dfe10c8c41",
+  "product": "FM-1_92361037",
+  "display": "BB-BOB R37",
+  "loader_sha256": "b9958031cda0b2dbef95add5c9e0b5f8df3617eac8ae90f313bf98294b3b0aa4",
+  "device_contacted": false,
+  "banks_in_fwsc": false
+}

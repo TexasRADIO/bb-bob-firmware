@@ -450,7 +450,7 @@ void fm1_cstart(void) {
   /* Sampling the pot is not a user gesture. Resetting the presentation timers
      here on every 25 ms poll prevents the show from ever becoming visible.
      sw_panel_observe reports a meaningful level change without ADC chatter. */
-  if(!bb_bank_writer_held()&&milliseconds-adc_time>=25) {adc_time=milliseconds;int level=bb_master_from_pot(&bb_mst,fm1_adc_read(FM1_ADC_MASTER));if(level>=0)command(SW_MASTER,level);}
+  if(!bb_bank_writer_held()&&milliseconds-adc_time>=25) {adc_time=milliseconds;int level=bb_master_from_pot(&bb_mst,fm1_adc_read(FM1_ADC_MASTER));if(level>=0) {uint32_t mark=critical_begin();sw_panel_master_poll(&band,level);critical_end(mark);}}
   if(!bb_bank_writer_held()&&milliseconds-screen_time>=100) {
    sw_visual_advance(&band,milliseconds-screen_time);
    sw_panel_tick(&panel,milliseconds-screen_time);

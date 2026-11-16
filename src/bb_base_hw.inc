@@ -19,6 +19,7 @@
                              FL_IN(off, n, 0xA0000u, 0xB4000u) || \
                              FL_IN(off, n, 0xE8000u, 0xFC000u))
 #include "fm1_flash.h"
+#include "fm1_flash_id.h"
 #include "../vendor/fm1/src/usb.c"
 #include "../vendor/fm1/src/midi_uart.c"   /* TRS MIDI IN: UART1 RX DMA, polled with USB from TIMER5 */
 
@@ -104,7 +105,8 @@ static uint32_t bb_boot_mode;
 static void bb_flash_probe(void)
 {
     uint32_t f = irq_save();
-    bb_flash_ok = FL_FAR(fl_jedec_ram)() == 0x856014u;   /* the expected 1 MiB part, else never write */
+    uint32_t jedec = FL_FAR(fl_jedec_ram)();
+    bb_flash_ok = FL_JEDEC_OK(jedec);     /* exact known FM-1 parts; unknown IDs remain read-only */
     irq_restore(f);
 }
 

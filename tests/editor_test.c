@@ -55,7 +55,7 @@ int main(void){
  memset(&band,0,sizeof band);memset(&panel,0,sizeof panel);band.bpm=168;band.swing=59;band.players=0x3f;
  band.air=.24f;band.glow=.5f;band.swell=.28f;band.texture=70;band.auto_calls=band.source_solos=band.spoken=1;
  bob_editor_init();
- {const uint8_t hello[]={0};receive(BB_ED_MSG_HELLO,1,hello,sizeof hello);assert(sent_count==1&&sent[0][6]==BB_ED_MSG_HELLO_REPLY&&sent[0][10]==BB_ED_PRODUCT_BB_BOB);}
+ {const uint8_t hello[]={0};receive(BB_ED_MSG_HELLO,1,hello,sizeof hello);assert(sent_count==1&&sent[0][6]==BB_ED_MSG_HELLO_REPLY&&sent[0][10]==BB_ED_PRODUCT_BB_BOB);assert((((uint32_t)sent[0][11]<<7)|sent[0][12])==SW_BOB_REVISION);}
  receive(BB_ED_MSG_SNAPSHOT_BEGIN,2,0,0);assert(sent_count==2&&sent[0][6]==BB_ED_MSG_SNAPSHOT_CHUNK&&sent[1][6]==BB_ED_MSG_SNAPSHOT_END);
  transaction(7,0,ED_BPM,1230);assert(band.bpm==123);
  transaction(0x21,6,ED_PLAYER_BASE+6,1);assert((band.players&(1u<<6))!=0);

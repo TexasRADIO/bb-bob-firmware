@@ -11,7 +11,8 @@ sys.path.insert(0, str(ROOT / "vendor/fm1/tools"))
 import fm1pkg_make as pack
 import lz4blk
 
-PRODUCT = "FM-1_92361036"
+from identity import load as load_identity
+PRODUCT = load_identity()["product_id"]
 TIMBRE_OFFSET = 0xA0000
 ART_OFFSET = 0xE8000
 SLOT_BYTES = 81920
