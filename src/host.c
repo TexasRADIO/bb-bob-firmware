@@ -67,12 +67,12 @@ int sw_host_calls_bank(const uint8_t *bytes,uint32_t length,uint32_t limit) {
 void sw_host_reset(uint32_t seed) {sw_init(&host,seed);sw_panel_init(&panel);host_showbill_init();panel_enabled=0;}
 void sw_host_panel_enable(uint32_t enabled) {sw_panel_release(&host,&panel);panel_enabled=(uint8_t)(enabled!=0);}
 void sw_host_panel_control(uint32_t kind,uint32_t index,int32_t value) {
- if(!panel_enabled)return;sw_showbill_touch(&showbill);
+ if(!panel_enabled)return;if(kind!=4)sw_showbill_touch(&showbill);
  if(kind==0)sw_panel_edge(&host,&panel,index,value!=0);
  if(kind==1)sw_panel_encoder(&host,&panel,index,value);
  if(kind==2)sw_panel_key(&host,&panel,index,value!=0);
  if(kind==3)sw_panel_release(&host,&panel);
- if(kind==4) {sw_panel_touch(&panel);sw_command(&host,SW_MASTER,value);}
+ if(kind==4)sw_command(&host,SW_MASTER,value);
  host_prepare();
 }
 void sw_host_command(uint32_t command,int32_t value) {

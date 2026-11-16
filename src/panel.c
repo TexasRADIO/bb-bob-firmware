@@ -205,7 +205,10 @@ uint32_t sw_panel_level_notice(const sw_panel *p) {return p->notice_ms&&p->notic
 uint32_t sw_panel_then_now_notice(const sw_panel *p) {return p->notice_ms&&p->notice==then_now_notice;}
 void sw_panel_observe(sw_engine *e,sw_panel *p) {
  uint32_t master=(uint32_t)(e->master_target*100.f+.5f);
- if(master!=p->last_master) {p->last_master=(uint8_t)master;p->notice=level_notice;p->notice_ms=1500;sw_panel_touch(p);}
+ /* Ignore a one-percent boundary wobble while still updating the audio level.
+    A real turn (or reaching zero/full) gets the normal LEVEL readout. */
+ int master_delta=(int)master-(int)p->last_master;
+ if(master!=p->last_master&&(master_delta<=-2||master_delta>=2||master==0||master==100)) {p->last_master=(uint8_t)master;p->notice=level_notice;p->notice_ms=1500;sw_panel_touch(p);}
  /* a tune that played to its end opens the encore window (the show shows ENCORE?) */
  if(p->was_playing&&!e->playing&&e->bar>=e->song.count)p->encore_ms=8000;
  p->was_playing=(uint8_t)e->playing;
