@@ -1,0 +1,5 @@
+class BandOutput extends AudioWorkletProcessor {
+ constructor(){super();this.buffers=[];this.offset=0;this.frames=0;this.played=0;this.visualTick=0;this.waiting=false;this.started=false;this.underruns=0;this.port.onmessage=e=>{if(e.data.pcm){this.buffers.push(e.data.pcm);this.frames+=e.data.pcm.length/2;this.waiting=false;}if(e.data.flush){this.buffers=[];this.offset=0;this.frames=0;this.started=false;}};}
+ process(inputs,outputs){const [left,right]=outputs[0];if(!this.started&&this.frames>=8192)this.started=true;for(let i=0;i<left.length;i++){if(this.started&&this.buffers.length){const b=this.buffers[0];left[i]=b[this.offset++];right[i]=b[this.offset++];this.frames--;this.played++;if(this.offset===b.length){this.buffers.shift();this.offset=0;}}else{left[i]=right[i]=0;if(this.started)this.underruns++;}}if(this.frames<8192&&!this.waiting){this.waiting=true;this.port.postMessage({need:true,queued:this.frames,played:this.played,underruns:this.underruns});}if(++this.visualTick%8===0)this.port.postMessage({played:this.played});return true;}
+}
+registerProcessor('band-output',BandOutput);

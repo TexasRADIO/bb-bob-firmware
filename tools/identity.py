@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One approved product identity shared by display, packaging and handover."""
+"""One approved product identity shared by display and release packaging."""
 import argparse,json,pathlib,re
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 def load(root=ROOT):
@@ -22,6 +22,7 @@ def header(data):
          ''.join('#define '+key+' '+json.dumps(data[field])+'\n' for key,field in [
           ('SW_BOB_DISPLAY_NAME','display_name'),('SW_BOB_VERSION','version'),
           ('SW_BOB_DISPLAY_VERSION','display_version'),('SW_BOB_PRODUCT_ID','product_id')])+
+         '#define SW_BOB_REVISION '+str(data['revision'])+'u\n'+
          'extern char sw_bob_app_sha_prefix[9];\n'
          'void sw_bob_hash_application(const unsigned char *, unsigned int, void (*)(void));\n'
          '#endif\n')

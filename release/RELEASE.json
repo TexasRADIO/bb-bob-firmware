@@ -1,19 +1,20 @@
 {
   "schema": "bb-bob-hub-release/v1",
-  "product": "FM-1_92361035",
-  "display": "BB-BOB R35",
-  "file": "BB-BOB-r35-hub.fwsc",
-  "package_sha256": "dc11da828623873e7f66ad04aaea703da92c6febee1a4a02f3a657a9fb13537c",
-  "base_file": "BB-BOB-r35-app-base.fwsc",
-  "base_sha256": "a72538c90c3693c82d2a6047c739be677d7da242dc84a400a03fbc59fb5c380d",
-  "app_bytes": 557040,
-  "app_sha256": "9aafd533e4a71108abcc4f783930befb3e2b8a04dcc72a080e14a34ed301836f",
-  "loader_file": "BB-BOB-r35-loader.bin",
+  "product": "FM-1_92361036",
+  "display": "BB-BOB R36",
+  "file": "BB-BOB-r36-editor-hub.fwsc",
+  "package_sha256": "48c74591d685347ca9f757ce0c0463bf7fc4a56097cdc85edf7973822cdc3ee0",
+  "app_bytes": 566672,
+  "app_sha256": "9d7ca77c9f9e71400f2338993fe7f4c35d4b59120d10e82bf45c6ca85f5ac0d2",
+  "loader_file": "BB-BOB-r36-loader.bin",
   "loader_sha256": "b9958031cda0b2dbef95add5c9e0b5f8df3617eac8ae90f313bf98294b3b0aa4",
   "timbres_sha256": "37cef61ad3d458bfdcfddced93dea3bb41bc530dde6d49067fd35cea8320e4de",
   "art_sha256": "05a66dee28cdc3d4ba4e5696236ee069b4473695803dd0d775e0224bb7c09403",
   "banks_in_fwsc": true,
-  "device_contacted": false,
-  "hardware_tested": false,
-  "hardware_basis": "The R34 application completed a physical install, boot, return and reinstall cycle on 2026-11-12. R35 changes only the package identity and displayed revision and was rebuilt and verified from source."
+  "editor_protocol": {
+    "version": 0,
+    "product": 5,
+    "build": 36,
+    "snapshot_bytes": 42
+  }
 }

@@ -1,0 +1,1199 @@
+{
+  "schema": 1,
+  "slots": 63,
+  "playable": 50,
+  "provisional_machine_reductions_are_not_classics": true,
+  "songs": [
+    {
+      "id": "BOB-V1-001",
+      "title": "San Antonio Rose",
+      "status": "complete literal64-bar Virtual Band source arrangement; print-checked; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 64,
+      "expanded_bars": 64,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 2,
+      "tempo": 204,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/001-san-antonio-rose/head.mid?v=418ff758b0062951",
+        "musicxml": "./scores/001-san-antonio-rose/head.musicxml?v=1d084a5ab72bbc1e"
+      }
+    },
+    {
+      "id": "BOB-V1-002",
+      "title": "Faded Love",
+      "status": "complete32-bar A/B melody and harmony checked against the NCFO public setting; exact Wills arrangement unverified",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 2,
+      "tempo": 104,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/002-faded-love/head.mid?v=7bdf2e6bdc90404b",
+        "musicxml": "./scores/002-faded-love/head.musicxml?v=b074c19a9ceec92c"
+      }
+    },
+    {
+      "id": "BOB-V1-003",
+      "title": "Take Me Back to Tulsa",
+      "status": "Complete16-bar standard verse/refrain head:10visible written bars plus6recording-derived bars; normalized2/4; original band scaffolding; exact vocal variants unverified",
+      "playable": true,
+      "written_bars": 10,
+      "expanded_bars": 16,
+      "meter": [
+        2,
+        4
+      ],
+      "quarter_notes_per_bar": 2,
+      "key": 7,
+      "tempo": 130,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/003-take-me-back-to-tulsa/head.mid?v=b684378fb664c9b0",
+        "musicxml": "./scores/003-take-me-back-to-tulsa/head.musicxml?v=277ec415b46f658b"
+      }
+    },
+    {
+      "id": "BOB-V1-004",
+      "title": "Steel Guitar Rag",
+      "status": "complete48-bar Leon McAuliffe steel head A/B/C; printed half-fret triad preserved; exact owned take not certified",
+      "playable": true,
+      "written_bars": 48,
+      "expanded_bars": 48,
+      "meter": [
+        2,
+        4
+      ],
+      "quarter_notes_per_bar": 2,
+      "key": 4,
+      "tempo": 110,
+      "lead_instrument": "steel",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/004-steel-guitar-rag/head.mid?v=0e7d97a6679ab1b1",
+        "musicxml": "./scores/004-steel-guitar-rag/head.musicxml?v=60f5d00d7c38aacc"
+      }
+    },
+    {
+      "id": "BOB-V1-005",
+      "title": "Stay a Little Longer",
+      "status": "complete16-bar printed fiddle head manually checked; exact Wills/sung-head alignment pending",
+      "playable": true,
+      "written_bars": 16,
+      "expanded_bars": 16,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 120,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/005-stay-little-longer/head.mid?v=8fb67c630e79a1f4",
+        "musicxml": "./scores/005-stay-little-longer/head.musicxml?v=6f879e808cc648bf"
+      }
+    },
+    {
+      "id": "BOB-V1-006",
+      "title": "Ida Red",
+      "status": "printed head entered and pitch/rhythm checked; BB-BOB accompaniment arrangement; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 16,
+      "expanded_bars": 16,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 9,
+      "tempo": 164,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/006-ida-red/head.mid?v=3674bbf7ab51d9f4",
+        "musicxml": "./scores/006-ida-red/head.musicxml?v=5e98ca8f5a140613"
+      }
+    },
+    {
+      "id": "BOB-V1-007",
+      "title": "Roly Poly",
+      "status": "Complete32bar main fiddle theme, source9–40; Theresa Britt2018setting; original BB-BOB band; displayed composer-credit conflict retained, exact Wills take unverified",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 4,
+      "tempo": 208,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/007-roly-poly/head.mid?v=1d094be670153e15",
+        "musicxml": "./scores/007-roly-poly/head.musicxml?v=6ca991ce2644e88b"
+      }
+    },
+    {
+      "id": "BOB-V1-008",
+      "title": "Bubbles in My Beer",
+      "status": "complete32bar Swing Jam Book2025 chorus setting; source/duration/accidental checks; jam-arrangement differences and exact Wills take limits retained",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 2,
+      "tempo": 185,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/008-bubbles-in-my-beer/head.mid?v=1dc2231d9cc923e1",
+        "musicxml": "./scores/008-bubbles-in-my-beer/head.musicxml?v=716f00ee5cc4af36"
+      }
+    },
+    {
+      "id": "BOB-V1-009",
+      "title": "Time Changes Everything",
+      "status": "Complete32bar Poston pre-solo upper-line guitar setting, concert TAB/staff checked; inner voices/continuous ornaments and exact Wills vocal/take outside scope",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 4,
+      "tempo": 100,
+      "lead_instrument": "guitar",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/009-time-changes-everything/head.mid?v=4df4c479a231326d",
+        "musicxml": "./scores/009-time-changes-everything/head.musicxml?v=b455ce7b8532525b"
+      }
+    },
+    {
+      "id": "BOB-V1-010",
+      "title": "Maiden's Prayer",
+      "status": "complete16-bar published ABC fiddle setting; same-pitch ties merged and impossible tie corrected; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 16,
+      "expanded_bars": 16,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 9,
+      "tempo": 96,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/010-maidens-prayer/head.mid?v=05dfc43f3fd40b66",
+        "musicxml": "./scores/010-maidens-prayer/head.musicxml?v=c0a521a70142f150"
+      }
+    },
+    {
+      "id": "BOB-V1-011",
+      "title": "Right or Wrong",
+      "status": "Complete1921 vocal melody:16-bar verse and32-bar chorus, single pass with second ending; original band harmony reduction; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 48,
+      "expanded_bars": 48,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 132,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/011-right-or-wrong/head.mid?v=cdcec3d8545ae737",
+        "musicxml": "./scores/011-right-or-wrong/head.musicxml?v=3cc4ac100a0d2f26"
+      }
+    },
+    {
+      "id": "BOB-V1-012",
+      "title": "Deep Water",
+      "status": "Complete 32-bar BB-BOB normalized vocal reading, with an explicitly qualified written bridge target and original band realization. Rhythm, breaths, reduced scoops and repeated-note articulations are editorial; complete printed edition and exact performance remain uncertified.",
+      "playable": true,
+      "written_bars": 0,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 5,
+      "tempo": 154,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/012-deep-water/head.mid?v=5ddbb05a24e15d99",
+        "musicxml": "./scores/012-deep-water/head.musicxml?v=61446e1d8ea14eda"
+      }
+    },
+    {
+      "id": "BOB-V1-013",
+      "title": "Cherokee Maiden",
+      "status": "Complete49-bar principal fiddle setting, Nitkowski source3-51:16-bar minor verse,32-bar major chorus and tied cadence. Native notation checked; independent drones omitted explicitly; exact Wills take unverified.",
+      "playable": true,
+      "written_bars": 49,
+      "expanded_bars": 49,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 2,
+      "tempo": 190,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/013-cherokee-maiden/head.mid?v=7950253d78a0c0fc",
+        "musicxml": "./scores/013-cherokee-maiden/head.musicxml?v=dee0372bcac7e425"
+      }
+    },
+    {
+      "id": "BOB-V1-014",
+      "title": "A Big Ball in Cowtown",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-015",
+      "title": "Across the Alley from the Alamo",
+      "status": "complete32bar Swing Jam Book2025 chorus setting; source/duration/accidental checks; jam-arrangement differences and exact Wills take limits retained",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 5,
+      "tempo": 140,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/015-across-the-alley-from-the-alamo/head.mid?v=343a35a765f9aff2",
+        "musicxml": "./scores/015-across-the-alley-from-the-alamo/head.musicxml?v=e1670aca01f50c7b"
+      }
+    },
+    {
+      "id": "BOB-V1-016",
+      "title": "Heart to Heart Talk",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-017",
+      "title": "Spanish Two Step",
+      "status": "Complete attributed 32-block Barton/McCrory banjo setting with both strains and pickups; BB-BOB timing, A4 fifth-string choice, link and band arrangement. Exact Wills take and literal fiddle head unclaimed.",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 33,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 9,
+      "tempo": 176,
+      "lead_instrument": "guitar",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/017-spanish-two-step/head.mid?v=50731f494f7c1faf",
+        "musicxml": "./scores/017-spanish-two-step/head.musicxml?v=9f1569f66b3a3c3d"
+      }
+    },
+    {
+      "id": "BOB-V1-018",
+      "title": "Home in San Antone",
+      "status": "Complete attributed editorial setting:1943printed16-bar verse plus Bob Martin32-bar instrumental AABA chorus, transposed E to G. Source versions and timing decisions explicit; exact Wills take unverified.",
+      "playable": true,
+      "written_bars": 48,
+      "expanded_bars": 48,
+      "meter": [
+        2,
+        2
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 176,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/018-home-in-san-antone/head.mid?v=1b5585acb3be35a9",
+        "musicxml": "./scores/018-home-in-san-antone/head.musicxml?v=6e3687b92de408cd"
+      }
+    },
+    {
+      "id": "BOB-V1-019",
+      "title": "Dusty Skies",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-020",
+      "title": "Corrine Corrina",
+      "status": "complete12-bar printed mandolin melody with three-quarter pickup and ties; exact Wills version/take not certified",
+      "playable": true,
+      "written_bars": 12,
+      "expanded_bars": 12,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 0,
+      "tempo": 136,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/020-corrine-corrina/head.mid?v=7b83935454067bb0",
+        "musicxml": "./scores/020-corrine-corrina/head.musicxml?v=3f23ab911b99cfa3"
+      }
+    },
+    {
+      "id": "BOB-V1-021",
+      "title": "Sugar Moon",
+      "status": "Complete32-bar BB-BOB printed/later-vocal reading:61known written attacks,11selected later-vocal nominal targets and25known-theme reprise attacks. Rhythm/reduced scoops/fast cadence articulation and ending are editorial; no complete printed edition or exact performance certificate.",
+      "playable": true,
+      "written_bars": 17,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 2,
+      "tempo": 184,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/021-sugar-moon/head.mid?v=d2f5d66518a58dc6",
+        "musicxml": "./scores/021-sugar-moon/head.musicxml?v=349fa53470f415fd"
+      }
+    },
+    {
+      "id": "BOB-V1-022",
+      "title": "Miss Molly",
+      "status": "Complete16-bar Brian Oberlin mandolin melody setting, pitch-checked independently against staff and TAB; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 16,
+      "expanded_bars": 16,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 176,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/022-miss-molly/head.mid?v=6a7c483192f7c9ef",
+        "musicxml": "./scores/022-miss-molly/head.musicxml?v=0234d2a006e7ca62"
+      }
+    },
+    {
+      "id": "BOB-V1-023",
+      "title": "My Window Faces the South",
+      "status": "Complete32-bar Jack Tuttle chorus setting, printed cut time retained, pickup/ties/chords checked; opening verse absent; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        2,
+        2
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 176,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/023-my-window-faces-the-south/head.mid?v=9e451c13b28e587a",
+        "musicxml": "./scores/023-my-window-faces-the-south/head.musicxml?v=63061ae8130bc454"
+      }
+    },
+    {
+      "id": "BOB-V1-024",
+      "title": "Fat Boy Rag",
+      "status": "complete56written-bar twin-guitar setting, repeats expanded100bars;24printed slash bars explicitly original runtime ad-lib; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 56,
+      "expanded_bars": 100,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 168,
+      "lead_instrument": "guitar",
+      "adlib_bars": 24,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/024-fat-boy-rag/head.mid?v=e4b3a597eb058d59",
+        "musicxml": "./scores/024-fat-boy-rag/head.musicxml?v=0bf835df71fc36a8"
+      }
+    },
+    {
+      "id": "BOB-V1-025",
+      "title": "Big Beaver",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-026",
+      "title": "Twin Guitar Special",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-027",
+      "title": "Osage Stomp",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-028",
+      "title": "Bob Wills Special",
+      "status": "Complete composed12-bar harmonized-chorus principal electric-guitar part; all69upper noteheads/5ties and shortened sourcebar8 retained. Lower steel voice is reference only; original band accompaniment. Exact take unverified.",
+      "playable": true,
+      "written_bars": 12,
+      "expanded_bars": 23,
+      "meter": [
+        2,
+        4
+      ],
+      "quarter_notes_per_bar": 2,
+      "key": 9,
+      "tempo": 80,
+      "lead_instrument": "guitar",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/028-bob-wills-special/head.mid?v=18ca98c301076f0c",
+        "musicxml": "./scores/028-bob-wills-special/head.musicxml?v=db988a9a3817bfe1"
+      }
+    },
+    {
+      "id": "BOB-V1-029",
+      "title": "New Texas Playboy Rag",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-030",
+      "title": "Brain Cloudy Blues",
+      "status": "Complete opening12-bar AAB vocal head from the public A chart, with pickup/rests/blue thirds/5ties; original44-bar band setting. Later chart variations and exact Wills take not certified.",
+      "playable": true,
+      "written_bars": 12,
+      "expanded_bars": 12,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 9,
+      "tempo": 90,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/030-brain-cloudy-blues/head.mid?v=b0d6a0d049a61cbc",
+        "musicxml": "./scores/030-brain-cloudy-blues/head.musicxml?v=8753687927c64705"
+      }
+    },
+    {
+      "id": "BOB-V1-031",
+      "title": "Bring It on Down to My House",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-032",
+      "title": "It's All Your Fault",
+      "status": "complete32bar Swing Jam Book2025 chorus setting; source/duration/accidental checks; jam-arrangement differences and exact Wills take limits retained",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 160,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/032-its-all-your-fault/head.mid?v=d9c3a712b9de97b5",
+        "musicxml": "./scores/032-its-all-your-fault/head.musicxml?v=7aa3076b25220bb8"
+      }
+    },
+    {
+      "id": "BOB-V1-033",
+      "title": "My Confession",
+      "status": "Complete32-bar BB-BOB printed/recording reading: shared printed theme, selected second-lyric-verse continuation and original band realization. Literal complete printed edition and exact-take certification remain unclaimed.",
+      "playable": true,
+      "written_bars": 17,
+      "expanded_bars": 32,
+      "meter": [
+        2,
+        2
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 0,
+      "tempo": 183,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/033-my-confession/head.mid?v=e4be15321845cbf8",
+        "musicxml": "./scores/033-my-confession/head.musicxml?v=94d75dfb6804e77e"
+      }
+    },
+    {
+      "id": "BOB-V1-034",
+      "title": "Hang Your Head in Shame",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-035",
+      "title": "Smoke on the Water",
+      "status": "Complete1943 vocal staff setting, verse16+chorus32 with both endings; exact Wills take unverified. First batch source/arrangement checks in progress.",
+      "playable": true,
+      "written_bars": 33,
+      "expanded_bars": 48,
+      "meter": [
+        2,
+        2
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 5,
+      "tempo": 132,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/035-smoke-on-the-water/head.mid?v=cbd3cdab05f8670c",
+        "musicxml": "./scores/035-smoke-on-the-water/head.musicxml?v=d875a779726591c9"
+      }
+    },
+    {
+      "id": "BOB-V1-036",
+      "title": "You're from Texas",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-037",
+      "title": "Silver Dew on the Blue Grass Tonight",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-038",
+      "title": "Keeper of My Heart",
+      "status": "Complete principal16-bar melody from Carr/Shamblin guitar arrangement, both endings, concert TAB pitch checked; native backing follows stated basic I/V progression; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 11,
+      "expanded_bars": 16,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 5,
+      "tempo": 112,
+      "lead_instrument": "guitar",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/038-keeper-of-my-heart/head.mid?v=13ea6066423685aa",
+        "musicxml": "./scores/038-keeper-of-my-heart/head.musicxml?v=3578c14b52cb2a8c"
+      }
+    },
+    {
+      "id": "BOB-V1-039",
+      "title": "My Shoes Keep Walking Back to You",
+      "status": "Complete G.Hebus concertina setting on twin fiddles, both endings and final tag expanded68bars; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 38,
+      "expanded_bars": 68,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 2,
+      "tempo": 136,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/039-my-shoes-keep-walking-back-to-you/head.mid?v=3a1de062e8a7bcf7",
+        "musicxml": "./scores/039-my-shoes-keep-walking-back-to-you/head.musicxml?v=6061f7bf3db0f440"
+      }
+    },
+    {
+      "id": "BOB-V1-040",
+      "title": "Milk Cow Blues",
+      "status": "complete12-bar melody head entered/read with rests, triplets and crossbar ties; source separate coda retained but not yet played; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 12,
+      "expanded_bars": 12,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 136,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/040-milk-cow-blues/head.mid?v=ac34fa7266a1d319",
+        "musicxml": "./scores/040-milk-cow-blues/head.musicxml?v=0da16dc656b6c280"
+      }
+    },
+    {
+      "id": "BOB-V1-041",
+      "title": "Sittin' on Top of the World",
+      "status": "Complete16-bar Wayne Erbsen melody setting with pickup and explicit final-rest completion; exact Bob Wills take unverified",
+      "playable": true,
+      "written_bars": 16,
+      "expanded_bars": 16,
+      "meter": [
+        2,
+        4
+      ],
+      "quarter_notes_per_bar": 2,
+      "key": 7,
+      "tempo": 132,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/041-sittin-top-world/head.mid?v=ef88f7812ed770cf",
+        "musicxml": "./scores/041-sittin-top-world/head.musicxml?v=7db793197467d59c"
+      }
+    },
+    {
+      "id": "BOB-V1-042",
+      "title": "Ida Red Likes the Boogie",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-043",
+      "title": "Boot Heel Drag",
+      "status": "complete head needed",
+      "playable": false,
+      "exports_available": false
+    },
+    {
+      "id": "BOB-V1-044",
+      "title": "Blues for Dixie",
+      "status": "Complete public C lead-sheet setting, both endings expanded to32-bar AABA;121written noteheads/14ties,133expanded attacks. Exact Wills take and conflicting printed credit unverified.",
+      "playable": true,
+      "written_bars": 26,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 0,
+      "tempo": 160,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/044-blues-for-dixie/head.mid?v=cd991cc65cf618e1",
+        "musicxml": "./scores/044-blues-for-dixie/head.musicxml?v=d59b508bd96a6dc3"
+      }
+    },
+    {
+      "id": "BOB-V1-045",
+      "title": "Beaumont Rag",
+      "status": "complete32-bar A/B David Harvey ABC setting, principal notes/rests/harmony imported; exact Bob Wills take unverified",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 2,
+      "tempo": 176,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/045-beaumont-rag/head.mid?v=afbb5004094e7dbf",
+        "musicxml": "./scores/045-beaumont-rag/head.musicxml?v=427e622579ab4556"
+      }
+    },
+    {
+      "id": "BOB-V1-046",
+      "title": "Twinkle, Twinkle Little Star",
+      "status": "complete printed melody entered/read; later fiddle setting with explicit triplets/double stops; exact Wills take not certified",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 164,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/046-twinkle-little-star/head.mid?v=4c8383f1edd9c575",
+        "musicxml": "./scores/046-twinkle-little-star/head.musicxml?v=f1148b19753a5215"
+      }
+    },
+    {
+      "id": "BOB-V1-047",
+      "title": "Trouble in Mind",
+      "status": "Complete written twelve-bar verse and eight-bar chorus; optional break repeated once only; exact Wills version/take unverified",
+      "playable": true,
+      "written_bars": 20,
+      "expanded_bars": 20,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 5,
+      "tempo": 104,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/047-trouble-in-mind/head.mid?v=efd4d58136ca3601",
+        "musicxml": "./scores/047-trouble-in-mind/head.musicxml?v=fb6c7609c4e8ffdd"
+      }
+    },
+    {
+      "id": "BOB-V1-048",
+      "title": "St. Louis Blues",
+      "status": "Complete written vocal A/A/B/C from the Handy facsimile:24major-blues,16minor,12chorus bars; final ending with explicit rest completion; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 52,
+      "expanded_bars": 52,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 120,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/048-st-louis-blues/head.mid?v=324204862292cd7b",
+        "musicxml": "./scores/048-st-louis-blues/head.musicxml?v=a72d7b546b4124a7"
+      }
+    },
+    {
+      "id": "BOB-V1-049",
+      "title": "Yearning",
+      "status": "Complete1925 principal vocal verse16 and chorus32, final second ending; original BB-BOB functional harmony; exact Wills take unverified",
+      "playable": true,
+      "written_bars": 48,
+      "expanded_bars": 48,
+      "meter": [
+        2,
+        2
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 5,
+      "tempo": 168,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/049-yearning/head.mid?v=3ef169493427fc84",
+        "musicxml": "./scores/049-yearning/head.musicxml?v=509cb08c95bbad2e"
+      }
+    },
+    {
+      "id": "BOB-V1-050",
+      "title": "Cotton Eyed Joe",
+      "status": "complete shared fiddle-standard setting checked against print; original BB-BOB band arrangement; exact Wills version unverified",
+      "playable": true,
+      "written_bars": 16,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 176,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/050-cotton-eyed-joe/head.mid?v=de6fea11fdb2cce4",
+        "musicxml": "./scores/050-cotton-eyed-joe/head.musicxml?v=1643159f7c7379e4"
+      }
+    },
+    {
+      "id": "BOB-V1-051",
+      "title": "Old Fashioned Love",
+      "status": "Complete1923Harms16-bar verse and32-bar final-ending refrain; principal low octave selected; original BB-BOB band realization, not an exact Wills take.",
+      "playable": true,
+      "written_bars": 48,
+      "expanded_bars": 48,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 5,
+      "tempo": 132,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/051-old-fashioned-love/head.mid?v=a7b200a478e467ab",
+        "musicxml": "./scores/051-old-fashioned-love/head.musicxml?v=19babd65da4e7e1d"
+      }
+    },
+    {
+      "id": "BOB-V1-052",
+      "title": "Carolina in the Morning",
+      "status": "Complete1922Remick12-bar first verse and32-bar final-ending chorus; original BB-BOB Western swing realization, not an exact Wills take.",
+      "playable": true,
+      "written_bars": 44,
+      "expanded_bars": 44,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 0,
+      "tempo": 152,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/052-carolina-in-the-morning/head.mid?v=4ce90c002f411d6e",
+        "musicxml": "./scores/052-carolina-in-the-morning/head.musicxml?v=9ff16246f03c0cf3"
+      }
+    },
+    {
+      "id": "BOB-V1-053",
+      "title": "Alexander's Ragtime Band",
+      "status": "Complete1911Berlin16-bar first verse and32-bar final-ending chorus; C-to-F itinerary and pickup preserved; original BB-BOB band realization, not an exact Wills take.",
+      "playable": true,
+      "written_bars": 48,
+      "expanded_bars": 48,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 5,
+      "tempo": 168,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/053-alexanders-ragtime-band/head.mid?v=a4cdb3cdeac0a700",
+        "musicxml": "./scores/053-alexanders-ragtime-band/head.musicxml?v=9231d9d98a28860c"
+      }
+    },
+    {
+      "id": "BOB-V1-054",
+      "title": "My Buddy",
+      "status": "Complete printed40-bar6/8-to3/4vocal reading; original BB-BOB harmony/band realization. Exact Wills take and literal piano accompaniment unclaimed.",
+      "playable": true,
+      "written_bars": 40,
+      "expanded_bars": 40,
+      "meter": [
+        6,
+        8
+      ],
+      "quarter_notes_per_bar": 3,
+      "key": 7,
+      "tempo": 126,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/054-my-buddy/head.mid?v=b66883166f6b3bdd",
+        "musicxml": "./scores/054-my-buddy/head.musicxml?v=82e570a76d77788f"
+      }
+    },
+    {
+      "id": "BOB-V1-055",
+      "title": "Liberty",
+      "status": "Complete16-bar printed two-strain setting, literal repeat expansion AABB; original BB-BOB band accompaniment/intro/solo/ending. Exact Wills take unverified.",
+      "playable": true,
+      "written_bars": 16,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 2,
+      "tempo": 184,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/055-liberty/head.mid?v=1ffcba86ec23c009",
+        "musicxml": "./scores/055-liberty/head.musicxml?v=e8b5a90405f0f122"
+      }
+    },
+    {
+      "id": "BOB-V1-056",
+      "title": "Goodbye Liza Jane",
+      "status": "Complete16-bar printed two-strain setting, literal repeat expansion AABB; original BB-BOB band accompaniment/intro/solo/ending. Exact Wills take unverified.",
+      "playable": true,
+      "written_bars": 16,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 2,
+      "tempo": 168,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/056-goodbye-liza-jane/head.mid?v=402f4a2cbade561a",
+        "musicxml": "./scores/056-goodbye-liza-jane/head.musicxml?v=6925671b2e037f3b"
+      }
+    },
+    {
+      "id": "BOB-V1-057",
+      "title": "Smith's Reel",
+      "status": "Complete Stu Williams sixteen-bar printed setting, expanded AABB; original BB-BOB accompaniment and arrangement, exact Wills take unverified.",
+      "playable": true,
+      "written_bars": 16,
+      "expanded_bars": 32,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 2,
+      "tempo": 184,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/057-smiths-reel/head.mid?v=4dc3f3e33fee55d0",
+        "musicxml": "./scores/057-smiths-reel/head.musicxml?v=a7d28ab5730c7ea6"
+      }
+    },
+    {
+      "id": "BOB-V1-058",
+      "title": "Beautiful Texas",
+      "status": "Complete32-bar first-verse melody and32-bar final-ending chorus from the original C-major waltz score; original BB-BOB band arrangement, not an exact Wills take.",
+      "playable": true,
+      "written_bars": 64,
+      "expanded_bars": 64,
+      "meter": [
+        3,
+        4
+      ],
+      "quarter_notes_per_bar": 3,
+      "key": 0,
+      "tempo": 140,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/058-beautiful-texas/head.mid?v=5dbb2dc8b93c1afc",
+        "musicxml": "./scores/058-beautiful-texas/head.musicxml?v=daf3c9b0919ff3e4"
+      }
+    },
+    {
+      "id": "BOB-V1-059",
+      "title": "Let Me Call You Sweetheart",
+      "status": "Complete 32-bar refrain from the 1910 B-flat waltz score, using its final ending. Original BB-BOB band setting.",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        3,
+        4
+      ],
+      "quarter_notes_per_bar": 3,
+      "key": 10,
+      "tempo": 90,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/059-let-me-call-you-sweetheart/head.mid?v=30a48a3f66108715",
+        "musicxml": "./scores/059-let-me-call-you-sweetheart/head.musicxml?v=21ce6290ce4eb5a9"
+      }
+    },
+    {
+      "id": "BOB-V1-060",
+      "title": "I Ain’t Got Nobody",
+      "status": "Complete 16-bar verse and 32-bar refrain from the 1915 G-major score, using its final ending. Original BB-BOB band setting.",
+      "playable": true,
+      "written_bars": 48,
+      "expanded_bars": 48,
+      "meter": [
+        2,
+        2
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 7,
+      "tempo": 130,
+      "lead_instrument": "guitar",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/060-i-aint-got-nobody/head.mid?v=83143e2066db3961",
+        "musicxml": "./scores/060-i-aint-got-nobody/head.musicxml?v=192b2b53cf926351"
+      }
+    },
+    {
+      "id": "BOB-V1-061",
+      "title": "Oh, You Beautiful Doll",
+      "status": "Complete selected refrain and final ending from the 1911 edition. Original BB-BOB band setting.",
+      "playable": true,
+      "written_bars": 20,
+      "expanded_bars": 20,
+      "meter": [
+        4,
+        4
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 8,
+      "tempo": 150,
+      "lead_instrument": "piano",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/061-oh-you-beautiful-doll/head.mid?v=f72203b38b5c281d",
+        "musicxml": "./scores/061-oh-you-beautiful-doll/head.musicxml?v=9fbc497427420ded"
+      }
+    },
+    {
+      "id": "BOB-V1-062",
+      "title": "I’ll See You in My Dreams",
+      "status": "Complete selected refrain and final ending from the 1924 edition. Original BB-BOB band setting.",
+      "playable": true,
+      "written_bars": 32,
+      "expanded_bars": 32,
+      "meter": [
+        2,
+        2
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 5,
+      "tempo": 144,
+      "lead_instrument": "steel",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/062-ill-see-you-in-my-dreams/head.mid?v=e8f8675c72ea7352",
+        "musicxml": "./scores/062-ill-see-you-in-my-dreams/head.musicxml?v=1d2605b6eaf1b506"
+      }
+    },
+    {
+      "id": "BOB-V1-063",
+      "title": "Wang Wang Blues",
+      "status": "Complete selected refrain and final ending from the 1921 edition. Original BB-BOB band setting.",
+      "playable": true,
+      "written_bars": 34,
+      "expanded_bars": 34,
+      "meter": [
+        2,
+        2
+      ],
+      "quarter_notes_per_bar": 4,
+      "key": 5,
+      "tempo": 166,
+      "lead_instrument": "fiddle",
+      "adlib_bars": 0,
+      "exports_available": true,
+      "exports": {
+        "midi": "./scores/063-wang-wang-blues/head.mid?v=bcf37cf8848ef6dd",
+        "musicxml": "./scores/063-wang-wang-blues/head.musicxml?v=89bdd2dc46074fd0"
+      }
+    }
+  ]
+}

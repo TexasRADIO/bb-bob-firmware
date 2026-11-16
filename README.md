@@ -1,31 +1,35 @@
-![BB-BOB](media/bb-bob-card.png)
+# Big Beat Studio BB-BOB R36
 
-# Big Beat Studio BB-BOB
-
-BB-BOB is a Western swing groovebox for the M-VAVE FM-1. Pick one of 50 tunes or generate an original, cue the steel solo, call the bridge and turn **Then / Now** to bring in acid bass and drum-machine beats.
+BB-BOB is a Western swing bandstand for the M-VAVE FM-1. Choose one of 50 tunes, generate an original, cue the band and bring in acid bass and drum-machine beats with Then / Now.
 
 ## Install and play
 
 - [Install BB-BOB](https://thebigbeat.app/bb-bob/install/)
-- [Try BB-BOB in a browser](https://thebigbeat.app/bb-bob/)
-- [Product page and guide](https://thebigbeat.app/bb-bob/about/)
+- [Play in a browser](https://thebigbeat.app/bb-bob/)
+- [Playing guide](https://thebigbeat.app/bb-bob/about/guide.html)
 
-The release contains one Hub-compatible `.fwsc`. It writes the BB-BOB application and its matching timbre and art banks in one package. It does not require BB1.
+The release includes one complete FWSC containing the application, timbre bank and art bank. It does not require BB1. The package identity is FM-1_92361036. Install only on the FM-1.
 
-## Hardware verification
+## Dance Hall and editor
 
-The R34 single-package Hub release was installed on a physical FM-1. It booted
-as `FM-1_92201029`, returned successfully to official V15, then installed and
-booted again from V15. R35 reserves the independent BB-BOB identity
-`FM-1_92361035`; its application, loader, banks and protected write ranges are
-rebuilt and checked from the tagged source before release.
+HOME opens Dance Hall. LFO switches Then/Now; BAND knob 3 controls FUNK. The show follows the tune, solos and band cues. This edition includes the shared editor protocol for reading the current session, reversible parameter edits, transport and connection checks.
+
+Editable Keeps and session state remain in memory. This firmware does not read other firmwares' projects or sound libraries. Keep exported files and backups before changing firmware.
 
 ## Build
 
-Use the PI32r3 toolchain and AC79 SDK with `JIELI_TOOLCHAIN` and `AC79_SDK` set. The source and generated build inputs for the released application are included here. A clean source build reproduces the released application and RAM loader byte for byte. `tools/package_full_install_r117.py` makes the app package; `tools/embed_banks.py` turns it into the single-package Hub release by embedding the pinned timbre and art banks at their fixed flash offsets.
+The firmware source, generated musical inputs, board source, package tools and licence notices are included. Use the PI32r3/FPU toolchain and the SDK described by the retained source manifests. The build uses a 128-frame half, the base-machine profile, XIP audio rendering and the frozen cue header recorded in build/RELEASE-INPUTS.json.
+
+Set JIELI_TOOLCHAIN to the unpacked JieLi toolchain and use the build tool's Linux container environment. Run:
+
+```sh
+python3 tools/build_target.py --base-machine --output-dir build/r36-editor2 --frozen-cue-sha256 7d436dfdbaa7abf6d6c5028a011e2a41002360dbecd951de1ec20b1496215da6
+```
+
+The generated application must match build/RELEASE-INPUTS.json. The package loader and banks are pinned in release/RELEASE.json; tools/verify_release.py independently checks their identities and contents.
 
 ## Licensing
 
-The original firmware code is GPL-3.0-only. See [LICENSE](LICENSE) and [LICENSING.md](LICENSING.md). Historical recordings, character art, fonts and music editions have separate rights and are not relicensed by the GPL.
+Original firmware code is GPL-3.0-only. See LICENSE and LICENSING.md. Imported board code retains its upstream notices. Artwork, historical recordings, fonts and musical editions retain their separate rights; inclusion does not relicense them under the GPL.
 
-BB-BOB is an independent project. M-VAVE and FM-1 are trademarks of their respective owners.
+BB-BOB is independent of M-VAVE. FM-1 and M-VAVE are their owners' trademarks.

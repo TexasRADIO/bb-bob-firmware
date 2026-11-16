@@ -95,6 +95,7 @@ static void peak_record(bb_peak_record *r,uint32_t half,uint32_t flags,uint32_t 
 }
 #endif
 #include "bb_base_hw.inc"
+#include "editor.inc"
 /* Detach every region-B view before the first bank erase. Bank hold remains
    latched through commit/abort, so no draw can use an erased or partial bank.
    An outstanding LCD DMA reads only framebuffer RAM; drain it before writing. */
@@ -261,8 +262,8 @@ static void draw(void) {
   uint32_t start=critical_begin();sw_platform_stats view=stats;critical_end(start);
   sw_platform_display(&view,rectangle,0);
   #endif
- } else if(sw_showbill_panel_visible(&showbill,&band,&panel))sw_panel_display(&band,&panel,rectangle,0);
- else sw_showbill_draw(&showbill,&band,rectangle,0);
+ } else if(sw_showbill_panel_visible(&showbill,&band,&panel)) {sw_showbill_on_screen(&showbill,0);sw_panel_display(&band,&panel,rectangle,0);}
+ else {sw_showbill_on_screen(&showbill,1);sw_showbill_draw(&showbill,&band,rectangle,0);}
  #ifdef SW_DIAGNOSTICS
  diagnostic_blit_begin=fm1_ticks();sw_platform_peak(&stats.draw_peak,diagnostic_blit_begin-draw_begin);
  #endif
@@ -408,6 +409,7 @@ void fm1_cstart(void) {
  boot_timbre_ready=sw_timbre_bank_status()==SW_TB_READY;
  #endif
  sw_init(&band,301026u);sw_panel_init(&panel);sw_showbill_init(&showbill);sw_showbill_set_art(0);band.master=band.master_target=0;
+ bob_editor_init();
  /* Boot foreground only, after SAFE decision and before audio/scan start. */
  if(sw_art_bank_open(&packed_art,art_mirror_load(),SW_ART_BANK_BYTES,fm1_wdt_feed)){sw_showbill_set_art(&packed_art.art);boot_art_ready=1;
   #ifdef SW_DIAGNOSTICS
@@ -438,6 +440,7 @@ void fm1_cstart(void) {
  for(;;) {
   fm1_wdt_feed();
   usb_retry(milliseconds);
+  bob_editor_service();
   bb_service(bb_band_stop,band.playing,(uint32_t)(band.master_target*100.f+.5f));
   bb_bank_console_service(bb_band_stop,band.playing,(uint32_t)(band.master_target*100.f+.5f));
   #ifdef SW_DIAGNOSTICS

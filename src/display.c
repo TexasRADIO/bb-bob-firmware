@@ -3,6 +3,7 @@
 #include "bob_identity.h"
 #include "rushing_font.h"
 #include "rodeo.h"
+#include "panel.h"
 #ifdef SW_WITH_ART
 #include "bob_art.h"
 #endif
@@ -50,6 +51,14 @@ static void text(sw_rectangle r,void *c,int x,int y,const char *s,int scale,uint
   if(*s=='-')r(x,y+3*scale,5*scale,scale,ink,c);
   if(*s=='_')r(x,y+6*scale,5*scale,scale,ink,c);
   if(*s=='!') {r(x+2*scale,y,scale,5*scale,ink,c);r(x+2*scale,y+6*scale,scale,scale,ink,c);}
+  if(*s==':') {r(x+2*scale,y+1*scale,scale,2*scale,ink,c);r(x+2*scale,y+4*scale,scale,2*scale,ink,c);}
+  if(*s=='/') for(int j=0;j<7;j++)r(x+(4-(j*5)/7)*scale,y+j*scale,scale,scale,ink,c);
+  if(*s=='\'') r(x+2*scale,y,scale,2*scale,ink,c);
+  if(*s=='.') r(x+2*scale,y+6*scale,scale,scale,ink,c);
+  if(*s=='?') {r(x+scale,y,3*scale,scale,ink,c);r(x+4*scale,y+scale,scale,2*scale,ink,c);r(x+2*scale,y+3*scale,2*scale,scale,ink,c);r(x+2*scale,y+4*scale,scale,scale,ink,c);r(x+2*scale,y+6*scale,scale,scale,ink,c);}
+  if(*s==',') {r(x+2*scale,y+5*scale,scale,2*scale,ink,c);r(x+scale,y+7*scale,scale,scale,ink,c);}
+  if(*s=='>') for(int j=0;j<7;j++)r(x+(j<4?j:6-j)*scale+scale,y+j*scale,scale,scale,ink,c);
+  if(*s=='<') for(int j=0;j<7;j++)r(x+(j<4?3-j:j-3)*scale+scale,y+j*scale,scale,scale,ink,c);
   if(*s=='#') {r(x+scale,y,scale,7*scale,ink,c);r(x+3*scale,y,scale,7*scale,ink,c);r(x,y+2*scale,5*scale,scale,ink,c);r(x,y+4*scale,5*scale,scale,ink,c);}
   x+=6*scale;
  }
@@ -220,29 +229,59 @@ static uint32_t song_row(uint32_t wanted) {
 static uint32_t row_song(uint32_t row) {
  if(!row)return 0;for(uint32_t i=0;i<sw_classic_slots();i++)if(sw_classic_available(i)&&!--row)return i+1u;return 0;
 }
+
+static void stage_header(const sw_engine *e,const sw_panel *p,sw_rectangle r,void *c,const char *context,uint32_t meter) {
+ const uint16_t cream=0xff78,teal=0x2a26,dark=0x1144,rust=0xb189,gold=0xe66e,dim=0x8ceb;
+ char b[24];uint32_t bar=e->bar<e->song.count?e->bar:e->song.count-1;
+ sw_chord chord=e->song.bars[bar].chord[(e->tick>4)?1:0];
+ r(0,0,240,105,teal,c);r(0,0,240,26,cream,c);
+ sw_rodeo_text(r,c,10,7,sw_panel_page_name(p->page),1,dark);
+ /* beat tally: four lamps, the downbeat in red */
+ uint32_t beats=e->song.beats?e->song.beats:4u,beat=((e->tick?e->tick-1u:0u)/2u)%beats;
+ for(uint32_t i=0;i<beats;i++)r(196+(int)i*10,9,7,7,!e->playing?0xd69au:i==beat?(i?gold:rust):0xd69au,c);
+ {uint32_t nb=bar+1u<e->song.count?bar+1u:bar,coming=e->auto_calls&&e->playing&&e->song.bars[nb].section==SW_SOLO&&e->song.bars[bar].section!=SW_SOLO;
+  /* the beat lamps double as the on-air tally; Bob's lamp takes their place when he calls */
+  if(sw_call_active(e)||(coming&&beat%2u==0)) {r(192,5,44,16,rust,c);text(r,c,205,10,"BOB",1,cream);}}
+ int kw=sw_rodeo_key(r,c,12,34,chord.root,cream);
+ static const char *const qualities[]={"6","7","-7","DIM","7#5","-6","MAJ7","9","AUG"};
+ text(r,c,16+kw,48,qualities[chord.quality],1,gold);
+ const char *t=e->song.classic_id?sw_classic_title(e->song.classic_id-1):"ORIGINAL TUNE";
+ {int n=0;while(t[n]&&n<23){b[n]=t[n];n++;}b[n]=0;}text(r,c,82,35,b,1,cream);
+ text(r,c,82,48,"BAR",1,dim);number(b,bar+1);text(r,c,104,48,b,1,gold);
+ text(r,c,124,48,e->score_playing&&e->score_arrangement?"FEATURE":sw_section_label(e),1,dim);
+ for(uint32_t i=0;i<e->song.count;i++)r(12+(int)(i*216/e->song.count),66,(int)(216/e->song.count)>1?(int)(216/e->song.count)-1:1,4,i<=bar?gold:dark,c);
+ if(meter) {
+  /* THEN / NOW: the instrument's signature control, always visible */
+  uint32_t k=(uint32_t)(e->modern_target*100.f+.5f);
+  text(r,c,12,82,"THEN",1,k<50?cream:dim);text(r,c,206,82,"NOW",1,k>=50?cream:dim);
+  r(42,82,160,8,dark,c);r(42,82,(int)(k*160/100),8,k<50?gold:0xe8f4,c);
+  for(int i=1;i<4;i++)r(42+i*40,82,1,8,teal,c);
+ } else text(r,c,12,82,context,1,gold);
+}
 void sw_panel_display(const sw_engine *e,const sw_panel *p,sw_rectangle r,void *c) {
- sw_display(e,r,c);if(e->title)return;
+ if(e->title) {sw_display(e,r,c);return;}
  const uint16_t cream=0xff78,teal=0x2a26,dark=0x1144,rust=0xb189,gold=0xe66e,dim=0x8ceb,mint=0x9f14;
  static const char *const keys[]={"C","C#","D","EB","E","F","F#","G","AB","A","BB","B"};
  static const char *const forms[]={"AABA","BLUES","REFRAIN"};
- char b[12];r(8,30,148,26,teal,c);PANEL_TRACE(sw_panel_page_name(p->page),12,31);sw_rodeo_text(r,c,12,31,sw_panel_page_name(p->page),1,cream);
- if(p->page!=SWP_DIRECT)panel_text(r,c,190,31,">HOME",5,cream);
- panel_text(r,c,12,49,p->page==SWP_BOB?"PRESETS: FAMILY / PAGE":p->page==SWP_KEEPS?"SELECT / PRESETS: KEEP":"SELECT: LIVE INSTRUMENT",24,gold);
- if(p->page==SWP_HOME)r(0,116,240,124,teal,c);
- else {r(0,60,160,45,teal,c);r(0,105,240,135,teal,c);}
+ char b[12];
+ {char ctx[40]="";if(p->page==SWP_BOB){uint16_t sl[24];uint32_t n=sw_panel_call_slots(p,sl);const char *f=sw_panel_family_name(p->family);int i=0;while(f[i]){ctx[i]=f[i];i++;}ctx[i++]=' ';number(ctx+i,p->bank+1u);while(ctx[i])i++;ctx[i++]=' ';ctx[i++]='O';ctx[i++]='F';ctx[i++]=' ';number(ctx+i,(n+23)/24);}
+  else if(p->page==SWP_KEEPS){const sw_keep *k=&p->keeps[p->slot%8u];const char *t=!k->valid?"EMPTY KEEP":k->classic_id?sw_classic_title(k->classic_id-1u):"ORIGINAL TUNE";int i=0;while(t[i]&&i<36){ctx[i]=t[i];i++;}ctx[i]=0;}
+  stage_header(e,p,r,c,ctx,p->page!=SWP_BOB&&p->page!=SWP_KEEPS);}
+ r(0,105,240,135,teal,c);
  if(p->page==SWP_BAND||p->page==SWP_KEEPS||p->page==SWP_DIRECT) {
   static const char *const cues[]={"FILL","BREAK","LEON","THEME","ENDING","ALL IN","AUTO BOB","SOLOS"};
   for(uint32_t i=0;i<8;i++) {
    int x=8+(int)(i%4)*58,y=117+(int)(i/4)*32;
-   int on=p->page==SWP_BAND?((e->players>>i)&1u):p->page==SWP_KEEPS?p->keeps[i].valid:1;
-   r(x,y,54,28,on?cream:dark,c);number(b,i+1);panel_text(r,c,x+3,y+4,b,2,on?rust:dim);
+   int on=p->page==SWP_BAND?((e->players>>i)&1u):p->page==SWP_KEEPS?p->keeps[i].valid:i==6?e->auto_calls:i==7?e->source_solos:1;
+   int armed=p->page==SWP_DIRECT&&((i==0&&e->fill)||(i==1&&e->stop_bars)||(i==2&&e->leon_pending)||(i==3&&e->home_pending)||(i==4&&e->ending&&e->ending<2));
+   r(x,y,54,28,armed?gold:on?cream:dark,c);number(b,i+1);panel_text(r,c,x+3,y+4,b,2,on?rust:dim);
    if(p->page==SWP_KEEPS) {panel_text(r,c,x+3,y+16,p->keeps[i].valid?"KEPT":"EMPTY",8,on?teal:dim);if(i==p->slot)r(x,y+26,54,2,gold,c);}
    else panel_text(r,c,x+3,y+16,p->page==SWP_BAND?sw_player_label(e,i):cues[i],8,on?teal:dim);
   }
-  if(p->page==SWP_KEEPS) {const sw_keep *k=&p->keeps[p->slot%8u];panel_text(r,c,12,65,!k->valid?"EMPTY KEEP":k->classic_id?sw_classic_title(k->classic_id-1u):"ORIGINAL TUNE",24,gold);panel_text(r,c,12,81,"RAM ONLY - POWER OFF LOSES KEEPS",24,dim);}
+
  } else if(p->page==SWP_BOB) {
-  uint16_t slots[24];uint32_t count=sw_panel_call_slots(p,slots);
-  panel_text(r,c,12,65,sw_panel_family_name(p->family),12,gold);number(b,p->bank+1u);panel_text(r,c,100,65,b,2,gold);panel_text(r,c,114,65,"OF",2,dim);number(b,(count+23)/24);panel_text(r,c,134,65,b,2,gold);
+  uint16_t slots[24];sw_panel_call_slots(p,slots);
+
   for(uint32_t i=0;i<24;i++) {
    uint32_t index=slots[i];int x=8+(int)(i%4)*58,y=106+(int)(i/4)*11;
    int on=index!=0xffff,active=on&&sw_call_active(e)&&e->cue_kind==index;
@@ -250,10 +289,6 @@ void sw_panel_display(const sw_engine *e,const sw_panel *p,sw_rectangle r,void *
    panel_text(r,c,x+23,y+2,on?sw_call_short_label(index):"----",4,active?teal:on?cream:dim);
   }
   panel_text(r,c,12,174,"25 LEON   26 AH-HA   27 RANDOM",36,gold);
- } else if(p->page==SWP_STYLE) {
-  panel_text(r,c,12,117,"FUNK: KNOB 1",24,gold);
-  panel_text(r,c,12,137,"THEN-NOW CHOOSES THE SOUND",32,cream);
-  panel_text(r,c,12,157,"METAL: COMING SOON",24,dim);
  } else if(p->page==SWP_SONG) {
   uint32_t selected=song_row(p->cursor),total=sw_classic_ready_count()+1u,start=selected>2?selected-2:0;
   if(total>5&&start>total-5)start=total-5;
@@ -278,20 +313,28 @@ void sw_panel_display(const sw_engine *e,const sw_panel *p,sw_rectangle r,void *
   panel_text(r,c,12,167,"PRESETS SONGS - REC NEW TUNE",36,gold);
   }
  }
- const char *line=p->page==SWP_BAND?"KEYS: PICK PLAYERS":p->page==SWP_KEEPS?"KEYS: KEEP; SAVE KEEPS; PLAY RECALL":p->page==SWP_DIRECT?"KEYS: FILL BREAK LEON THEME END ...":p->page==SWP_BOB?"KEYS: BOB CALLS":"KEYS: PLAY";
+ const char *line=p->page==SWP_BAND?"KEYS: PICK PLAYERS":p->page==SWP_KEEPS?"KEYS: KEEP; SAVE KEEPS; PLAY RECALL":p->page==SWP_DIRECT?"CUES 1-8 - OTHER KEYS PLAY":p->page==SWP_BOB?"KEYS: BOB CALLS":"KEYS: PLAY";
  panel_text(r,c,8,185,line,36,cream);
  if(p->page==SWP_BOB)panel_text(r,c,104,185,sw_panel_family_name(p->family),12,gold);
- else if(p->page!=SWP_BAND&&p->page!=SWP_KEEPS&&p->page!=SWP_DIRECT)panel_text(r,c,74,185,sw_panel_player(p)==SW_BASS?"UPRIGHT":sw_player_label(e,sw_panel_player(p)),14,gold);
+ else if(p->page==SWP_DIRECT)panel_text(r,c,170,185,sw_panel_player(p)==SW_BASS?"UPRIGHT":sw_player_label(e,sw_panel_player(p)),11,gold);
+ else if(p->page!=SWP_BAND&&p->page!=SWP_KEEPS)panel_text(r,c,74,185,sw_panel_player(p)==SW_BASS?"UPRIGHT":sw_player_label(e,sw_panel_player(p)),14,gold);
  for(uint32_t i=0;i<4;i++) {
   int x=8+(int)i*58;r(x,197,54,26,dark,c);panel_text(r,c,x+2,199,sw_panel_knob_label(p->page,i),8,dim);
   uint32_t value=sw_panel_knob_value(e,p,i);number(b,value);
-  const char *label=(p->page==SWP_STYLE&&i==1)?"SOON":(p->page==SWP_STYLE&&i==2)?"--":(p->page==SWP_SONG&&i==1)?keys[value%12u]:((p->page==SWP_SONG||p->page==SWP_DIRECT)&&i==2)?forms[value%3u]:((p->page==SWP_BOB||p->page==SWP_BAND)&&i==2)?(value?"ON":"OFF"):b;
+  const char *label=(p->page==SWP_SONG&&i==1)?keys[value%12u]:((p->page==SWP_SONG||p->page==SWP_DIRECT)&&i==2)?forms[value%3u]:(p->page==SWP_BOB&&i==2)?(value?"ON":"OFF"):b;
   if(p->page==SWP_SONG&&i==1) {PANEL_TRACE(label,x+3,212);sw_rodeo_key_size(r,c,x+3,210,value,11,gold);}
-  else panel_text(r,c,x+3,212,label,8,p->page==SWP_STYLE&&(i==1||i==2)?dim:gold);
+  else panel_text(r,c,x+3,212,label,8,gold);
+ }
+ if(sw_panel_then_now_notice(p)) {
+  uint32_t k=(uint32_t)(e->modern_target*100.f+.5f);
+  r(8,197,224,26,dark,c);text(r,c,14,203,"THEN",2,k<50?cream:dim);text(r,c,180,203,"NOW",2,k>=50?cream:dim);
+  r(72,205,100,10,teal,c);r(72,205,(int)(k*100/100),10,k<50?gold:0xe8f4,c);
  }
  if(sw_panel_level_notice(p)) {panel_text(r,c,8,230,"LEVEL",5,cream);number(b,p->last_master);panel_text(r,c,50,230,b,3,gold);}
  else if(p->queued_kind) {
   uint32_t applied=p->queued_kind&SWP_APPLIED;r(0,227,240,13,applied?teal:rust,c);
-  panel_text(r,c,8,230,applied?"APPLIED":"QUEUED",7,applied?mint:cream);panel_text(r,c,58,230,sw_panel_status_label(e,p),28,applied?mint:cream);
- } else if(p->notice_ms)panel_text(r,c,8,230,p->notice,36,cream);
+  panel_text(r,c,8,230,applied?"APPLIED":"QUEUED",7,applied?mint:cream);panel_text(r,c,58,230,sw_panel_status_label(e,p),22,applied?mint:cream);
+  if(!applied&&e->playing) {uint32_t beats=e->song.beats?e->song.beats:4u,beat=((e->tick?e->tick-1u:0u)/2u)%beats;
+   char n[12]="IN ";number(n+3,beats-beat);panel_text(r,c,196,230,n,5,cream);}
+ } else if(p->notice_ms&&!sw_panel_then_now_notice(p))panel_text(r,c,8,230,p->notice,36,cream);
 }

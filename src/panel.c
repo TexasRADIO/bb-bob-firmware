@@ -3,9 +3,13 @@
 static int bounded(int x,int lo,int hi) {return x<lo?lo:x>hi?hi:x;}
 static int wrap(int x,int n) {x%=n;return x<0?x+n:x;}
 static void say(sw_panel *p,const char *s) {p->notice=s;p->notice_ms=1800;}
+/* Bob reacts to the player. Visual state only (the gesture clock), never the audio path.
+   0 look, 1 cigar puff, 2 ash, 3/4 arm gestures, 5 laugh. */
+static void react(sw_engine *e,uint32_t gesture) {if(sw_call_active(e))return;e->gesture=(uint8_t)gesture;e->gesture_time=0;e->gesture_active=1;}
+static const char then_now_notice[]="THEN/NOW";
 uint32_t sw_panel_white(uint32_t i) {static const uint8_t keys[8]={0,2,4,6,7,9,11,12};return i<8?keys[i]:27;}
 uint32_t sw_panel_player(const sw_panel *p) {static const uint8_t voices[7]={SW_STEEL,SW_FIDDLE,SW_GUITAR,SW_PIANO,SW_BASS,SW_HORNS,SW_SYNTH};return voices[p->voice%7u];}
-const char *sw_panel_page_name(uint32_t page) {static const char *const names[]={"PLAY KEYS","BAND","SOUND","STYLE","BOB","SONGS","KEEPS","CONDUCT"};return page<8?names[page]:"PLAY KEYS";}
+const char *sw_panel_page_name(uint32_t page) {static const char *const names[]={"PLAY KEYS","BAND","SOUND","BAND","BOB","SONGS","KEEPS","DANCE HALL"};return page<8?names[page]:"PLAY KEYS";}
 void sw_panel_init(sw_panel *p) {
  uint8_t *b=(uint8_t *)p;for(uint32_t i=0;i<sizeof *p;i++)b[i]=0;p->page=SWP_DIRECT;p->seed=301026;p->last_master=65;p->mapped_family=255;sw_panel_refresh_calls(p);
 }
@@ -22,7 +26,7 @@ static void fresh(sw_engine *e,sw_panel *p) {
 }
 static void keep(sw_engine *e,sw_panel *p) {
  if(e->pending_ready||e->classic_request||p->request) {say(p,"WAIT FOR NEXT BAR");return;}
- sw_keep *k=&p->keeps[p->slot];k->valid=1;k->seed=e->song.seed;k->classic_id=e->song.classic_id;k->key=e->song.key;k->form=e->song.form;k->bpm=e->bpm;k->players=e->players;k->swing=(uint8_t)e->swing;k->modern=(uint8_t)(e->modern_target*100.f+.5f);k->hiphop=(uint8_t)(e->hiphop_target*100.f+.5f);k->air=(uint8_t)(e->air*100.f+.5f);k->glow=(uint8_t)(e->glow*100.f+.5f);k->swell=(uint8_t)(e->swell*100.f+.5f);k->fiddle=e->fiddle_colour;k->texture=e->texture;k->auto_bob=e->auto_calls;k->source_solos=e->source_solos;say(p,"KEPT - RAM ONLY");
+ sw_keep *k=&p->keeps[p->slot];k->valid=1;k->seed=e->song.seed;k->classic_id=e->song.classic_id;k->key=e->song.key;k->form=e->song.form;k->bpm=e->bpm;k->players=e->players;k->swing=(uint8_t)e->swing;k->modern=(uint8_t)(e->modern_target*100.f+.5f);k->hiphop=(uint8_t)(e->hiphop_target*100.f+.5f);k->air=(uint8_t)(e->air*100.f+.5f);k->glow=(uint8_t)(e->glow*100.f+.5f);k->swell=(uint8_t)(e->swell*100.f+.5f);k->fiddle=e->fiddle_colour;k->texture=e->texture;k->auto_bob=e->auto_calls;k->source_solos=e->source_solos;say(p,"KEPT UNTIL POWER OFF");
 }
 void sw_panel_edge(sw_engine *e,sw_panel *p,uint32_t id,uint32_t down) {
  if(id>=14)return;sw_panel_touch(p);
@@ -89,42 +93,49 @@ static void replan(sw_engine *e,sw_panel *p) {
  e->pending_ready=0;e->classic_request=0;p->request=3;
 }
 void sw_panel_button(sw_engine *e,sw_panel *p,uint32_t id) {
- if(id>=14)return;sw_panel_touch(p);
+ if(id>=14)return;sw_panel_touch(p);p->cue_touch=0;
  switch(id) {
  case SWP_OCT_DOWN:case SWP_OCT_UP:
   sw_panel_release(e,p);p->octave=(int8_t)bounded(p->octave+(id==SWP_OCT_UP?1:-1),-1,1);say(p,"KEYBOARD OCTAVE");break;
- case SWP_FX:sw_command(e,SW_FILL,0);e->title=0;say(p,"FILL IT UP");break;
+ case SWP_FX:
+  if(p->fill_ms) {sw_command(e,SW_STOPTIME,0);say(p,"BREAK - TWO BARS");p->fill_ms=0;}
+  else {sw_command(e,SW_FILL,0);say(p,"FILL IT UP - TAP AGAIN TO BREAK");p->fill_ms=SWP_DOUBLE_MS;react(e,1);}
+  e->title=0;p->cue_touch=p->page==SWP_DIRECT||p->page==SWP_HOME;break;
  case SWP_SEL:page(e,p,SWP_BAND);break;
  case SWP_ENV:page(e,p,SWP_TONE);break;
- case SWP_LFO:page(e,p,SWP_STYLE);break;
+ case SWP_LFO: /* STYLE page retired: LFO snaps the band between Then and Now */
+  sw_command(e,SW_MODERN,e->modern_target<.5f?100:0);p->notice=then_now_notice;p->notice_ms=1500;react(e,3);break;
  case SWP_EDIT:songs(e,p);break;
  case SWP_GLO:if(p->page==SWP_BOB)family_step(p,1,1);else page(e,p,SWP_BOB);break;
  case SWP_HOME_BUTTON:page(e,p,SWP_DIRECT);break;
  case SWP_SAVE:if(p->page!=SWP_KEEPS)page(e,p,SWP_KEEPS);else keep(e,p);break;
- case SWP_ARP:sw_command(e,SW_LEON,0);if(e->leon_pending||sw_call_active(e))queued(e,p,SWP_Q_LEON,0);else say(p,"LEON - NEXT TUNE");break;
+ case SWP_ARP:sw_command(e,SW_LEON,0);if(e->leon_pending||sw_call_active(e))queued(e,p,SWP_Q_LEON,0);else say(p,"LEON - NEXT TUNE");p->cue_touch=p->page==SWP_DIRECT||p->page==SWP_HOME;break;
  case SWP_SEQ:page(e,p,SWP_HOME);break;
  case SWP_PLAY:
   if(p->page==SWP_SONG)confirm(e,p);
   else if(p->page==SWP_KEEPS) {if(p->keeps[p->slot].valid) {e->pending_ready=0;e->classic_request=0;p->request=2;queued(e,p,SWP_Q_SONG,p->keeps[p->slot].classic_id);page(e,p,SWP_DIRECT);}else say(p,"EMPTY KEEP");}
-  else {sw_command(e,SW_PLAY,0);if(!e->playing)sw_panel_release(e,p);}break;
+  else {uint32_t encore=p->encore_ms&&!e->playing;sw_command(e,SW_PLAY,0);if(!e->playing)sw_panel_release(e,p);
+   else if(encore) {sw_command(e,SW_HOLLER,0);react(e,5);say(p,"ENCORE!");}p->encore_ms=0;}break;
  case SWP_REC:fresh(e,p);queued(e,p,SWP_Q_SONG,0);page(e,p,SWP_DIRECT);break;
  }
 }
 void sw_panel_encoder(sw_engine *e,sw_panel *p,uint32_t id,int32_t steps) {
- if(id>=7||!steps)return;sw_panel_touch(p);steps=bounded(steps,-1000,1000);e->title=0;
+ if(id>=7||!steps)return;sw_panel_touch(p);p->cue_touch=0;steps=bounded(steps,-1000,1000);e->title=0;
  if(id==0) {
   if(p->page==SWP_KEEPS)p->slot=(uint8_t)wrap(p->slot+steps,8);
   else {sw_panel_release(e,p);p->voice=(uint8_t)wrap(p->voice+steps,7);say(p,"LIVE INSTRUMENT");}
- } else if(id==1)sw_command(e,SW_MODERN,(int)(e->modern_target*100.f+.5f)+steps*5);
+ } else if(id==1) {sw_command(e,SW_MODERN,(int)(e->modern_target*100.f+.5f)+steps*5);p->notice=then_now_notice;p->notice_ms=1500;}
  else if(id==6) {
   if(p->page==SWP_BOB)family_step(p,steps,0);
   else if(p->page==SWP_KEEPS)p->slot=(uint8_t)wrap(p->slot+steps,8);
+  else if(p->page==SWP_DIRECT&&e->playing) {
+   /* one turn = next tune at the next bar; browse-first stays on SONGS */
+   int direction=steps>0?1:-1;p->cursor=e->song.classic_id;
+   for(uint32_t n=0;n<sw_classic_slots()+1u;n++) {p->cursor=(uint8_t)wrap(p->cursor+direction,(int)sw_classic_slots()+1);if(p->cursor&&sw_classic_available(p->cursor-1u))break;}
+   if(p->cursor&&sw_classic_available(p->cursor-1u)) {e->pending_ready=0;e->classic_request=0;p->request=0;e->classic_mode=1;sw_command(e,SW_CLASSIC_SELECT,p->cursor-1);queued(e,p,SWP_Q_SONG,p->cursor);react(e,4);p->cue_touch=1;}
+  }
   else {songs(e,p);int direction=steps>0?1:-1;steps%=(int)(sw_classic_ready_count()+1u);
    for(int i=0;i<(steps>0?steps:-steps);i++)for(uint32_t n=0;n<sw_classic_slots()+1u;n++) {p->cursor=(uint8_t)wrap(p->cursor+direction,(int)sw_classic_slots()+1);if(!p->cursor||sw_classic_available(p->cursor-1u))break;}}
- } else if(p->page==SWP_STYLE) {
-  if(id==2)sw_command(e,SW_HIPHOP,(int)(e->hiphop_target*100.f+.5f)+steps*2);
-  if(id==3)say(p,"METAL - COMING SOON");
-  if(id==5)sw_command(e,SW_AIR,(int)(e->air*100.f+.5f)+steps*2);
  } else if(p->page==SWP_TONE) {
   if(id==2)sw_command(e,SW_GLOW,(int)(e->glow*100.f+.5f)+steps*2);
   if(id==3)sw_command(e,SW_SWELL,(int)(e->swell*100.f+.5f)+steps*2);
@@ -140,7 +151,7 @@ void sw_panel_encoder(sw_engine *e,sw_panel *p,uint32_t id,int32_t steps) {
    if(p->page==SWP_SONG||p->page==SWP_DIRECT) {sw_command(e,SW_FORM,wrap(e->form_next+steps,3));
     if(!e->classic_mode) {replan(e,p);queued(e,p,SWP_Q_FORM,e->form_next);}else say(p,"FORM FOR NEXT NEW TUNE");}
    else if(p->page==SWP_BOB)sw_command(e,SW_AUTO_CALL,steps>0);
-   else if(p->page==SWP_BAND)sw_command(e,SW_SOURCE_SOLOS,steps>0);
+   else if(p->page==SWP_BAND)sw_command(e,SW_HIPHOP,(int)(e->hiphop_target*100.f+.5f)+steps*2);
    else sw_command(e,SW_GLOW,(int)(e->glow*100.f+.5f)+steps*2);
   }
   if(id==5)sw_command(e,SW_AIR,(int)(e->air*100.f+.5f)+steps*2);
@@ -149,7 +160,7 @@ void sw_panel_encoder(sw_engine *e,sw_panel *p,uint32_t id,int32_t steps) {
 void sw_panel_key(sw_engine *e,sw_panel *p,uint32_t key,uint32_t down) {
  if(key>=27)return;sw_panel_touch(p);
  uint32_t bit=1u<<key;if(!down) {p->held_keys&=~bit;sw_key_off(e,key);return;}
- if(p->held_keys&bit)return;p->held_keys|=bit;e->title=0;
+ if(p->held_keys&bit)return;p->held_keys|=bit;e->title=0;p->cue_touch=0;
  if(p->page==SWP_BOB) {
   if(key==24) {sw_command(e,SW_LEON,0);if(e->leon_pending||sw_call_active(e))queued(e,p,SWP_Q_LEON,0);}
   else if(key==25)sw_command(e,SW_HOLLER,0);else if(key==26)sw_command(e,SW_RANDOM_CALL,0);
@@ -160,9 +171,10 @@ void sw_panel_key(sw_engine *e,sw_panel *p,uint32_t key,uint32_t down) {
    else if(p->page==SWP_KEEPS)p->slot=(uint8_t)i;
    else {static const uint8_t actions[]={SW_FILL,SW_STOPTIME,SW_LEON,SW_HOME,SW_END,SW_BAND,SW_AUTO_CALL,SW_SOURCE_SOLOS};
     int value=i==5?255:i==6?!e->auto_calls:i==7?!e->source_solos:0;sw_command(e,actions[i],value);
-    if(i==4)queued(e,p,SWP_Q_END,0);else if(i==3)queued(e,p,SWP_Q_THEME,0);else if(i==2&&(e->leon_pending||sw_call_active(e)))queued(e,p,SWP_Q_LEON,0);else say(p,"BAND CUE");}
-   break;
+    if(i==4) {queued(e,p,SWP_Q_END,0);react(e,5);}else if(i==3) {queued(e,p,SWP_Q_THEME,0);react(e,4);}else if(i==2&&(e->leon_pending||sw_call_active(e)))queued(e,p,SWP_Q_LEON,0);else say(p,"BAND CUE");p->cue_touch=i!=6&&i!=7;}
+   return;
   }
+  if(p->page==SWP_DIRECT)sw_key_on(e,key,(uint32_t)(53+(int)key+p->octave*12),sw_panel_player(p));
  } else sw_key_on(e,key,(uint32_t)(53+(int)key+p->octave*12),sw_panel_player(p));
 }
 void sw_panel_service(sw_engine *e,sw_panel *p) {
@@ -183,14 +195,20 @@ void sw_panel_service(sw_engine *e,sw_panel *p) {
 void sw_panel_tick(sw_panel *p,uint32_t ms) {
  p->notice_ms=(uint16_t)(ms>=p->notice_ms?0:p->notice_ms-ms);
  p->status_ms=(uint16_t)(ms>=p->status_ms?0:p->status_ms-ms);
+ p->fill_ms=(uint16_t)(ms>=p->fill_ms?0:p->fill_ms-ms);
+ p->encore_ms=(uint16_t)(ms>=p->encore_ms?0:p->encore_ms-ms);
  p->idle_ms=(uint16_t)(ms>=SWP_IDLE_MS-p->idle_ms?SWP_IDLE_MS:p->idle_ms+ms);
  if((p->queued_kind&SWP_APPLIED)&&!p->status_ms)p->queued_kind=SWP_Q_NONE;
 }
 static const char level_notice[]="LEVEL";
 uint32_t sw_panel_level_notice(const sw_panel *p) {return p->notice_ms&&p->notice==level_notice;}
+uint32_t sw_panel_then_now_notice(const sw_panel *p) {return p->notice_ms&&p->notice==then_now_notice;}
 void sw_panel_observe(sw_engine *e,sw_panel *p) {
  uint32_t master=(uint32_t)(e->master_target*100.f+.5f);
  if(master!=p->last_master) {p->last_master=(uint8_t)master;p->notice=level_notice;p->notice_ms=1500;sw_panel_touch(p);}
+ /* a tune that played to its end opens the encore window (the show shows ENCORE?) */
+ if(p->was_playing&&!e->playing&&e->bar>=e->song.count)p->encore_ms=8000;
+ p->was_playing=(uint8_t)e->playing;
  /* Keep the three performance pages armed until the player leaves. */
  if(p->page!=SWP_DIRECT&&p->page!=SWP_HOME&&p->page!=SWP_BOB&&p->idle_ms>=SWP_IDLE_MS&&!p->held_keys&&!p->buttons)page(e,p,SWP_DIRECT);
  uint32_t q=p->queued_kind;if(!q||(q&SWP_APPLIED))return;
@@ -207,18 +225,16 @@ void sw_panel_observe(sw_engine *e,sw_panel *p) {
 }
 const char *sw_panel_knob_label(uint32_t page,uint32_t knob) {
  if(knob>3)return "";if(knob==3)return "AIR";
- if(page==SWP_STYLE) {static const char *const s[]={"FUNK","METAL","--"};return s[knob];}
  if(page==SWP_TONE) {static const char *const s[]={"GLOW","SWELL","FIDDLE"};return s[knob];}
  if(!knob)return "TEMPO";
  if(knob==1)return page==SWP_SONG?"KEY":"SWING";
- return page==SWP_SONG||page==SWP_DIRECT?"FORM":page==SWP_BOB?"AUTO-BOB":page==SWP_BAND?"SOLOS":"GLOW";
+ return page==SWP_SONG||page==SWP_DIRECT?"FORM":page==SWP_BOB?"AUTO-BOB":page==SWP_BAND?"FUNK":"GLOW";
 }
 uint32_t sw_panel_knob_value(const sw_engine *e,const sw_panel *p,uint32_t knob) {
  if(knob==3)return (uint32_t)(e->air*100.f+.5f);
- if(p->page==SWP_STYLE)return knob==0?(uint32_t)(e->hiphop_target*100.f+.5f):0;
  if(p->page==SWP_TONE)return knob==0?(uint32_t)(e->glow*100.f+.5f):knob==1?(uint32_t)(e->swell*100.f+.5f):e->fiddle_colour;
  if(!knob)return e->bpm;if(knob==1)return p->page==SWP_SONG?e->key_next:e->swing;
- return p->page==SWP_SONG||p->page==SWP_DIRECT?e->form_next:p->page==SWP_BOB?e->auto_calls:p->page==SWP_BAND?e->source_solos:(uint32_t)(e->glow*100.f+.5f);
+ return p->page==SWP_SONG||p->page==SWP_DIRECT?e->form_next:p->page==SWP_BOB?e->auto_calls:p->page==SWP_BAND?(uint32_t)(e->hiphop_target*100.f+.5f):(uint32_t)(e->glow*100.f+.5f);
 }
 const char *sw_panel_status_label(const sw_engine *e,const sw_panel *p) {
  (void)e;static const char *const keys[]={"KEY C","KEY C#","KEY D","KEY EB","KEY E","KEY F","KEY F#","KEY G","KEY AB","KEY A","KEY BB","KEY B"};
@@ -255,13 +271,17 @@ uint32_t sw_panel_led(const sw_engine *e,const sw_panel *p,uint32_t id) {
  if(id>=14) {
   uint32_t key=id-14;
   if(p->page==SWP_BOB)return key>=24||(p->mapped_family==p->family&&p->mapped_bank==p->bank&&p->call_slots[key]!=0xffff);
-  if(p->page==SWP_BAND||p->page==SWP_DIRECT||p->page==SWP_KEEPS) {for(uint32_t i=0;i<8;i++)if(key==sw_panel_white(i))return p->page==SWP_BAND?((e->players>>i)&1u):p->page==SWP_KEEPS?p->keeps[i].valid:1;return 0;}
+  if(p->page==SWP_BAND||p->page==SWP_DIRECT||p->page==SWP_KEEPS) {for(uint32_t i=0;i<8;i++)if(key==sw_panel_white(i)) {
+    if(p->page==SWP_BAND)return (e->players>>i)&1u;if(p->page==SWP_KEEPS)return p->keeps[i].valid;
+    uint32_t beat=e->playing&&((e->tick?e->tick-1u:0u)&2u)==0; /* toggles show state; queued cues blink */
+    switch(i){case 0:return e->fill?1:beat;case 2:return e->leon_pending?beat:1;case 3:return e->home_pending?beat:1;case 4:return e->ending?beat:1;case 6:return e->auto_calls;case 7:return e->source_solos;default:return 1;}
+   }return 0;}
   return (p->held_keys>>key)&1u;
  }
  switch(id) {
  case SWP_PLAY:return e->playing;case SWP_REC:return e->pending_ready||p->request;
  case SWP_FX:return e->fill;case SWP_SEL:return p->page==SWP_BAND;
- case SWP_ENV:return p->page==SWP_TONE;case SWP_LFO:return p->page==SWP_STYLE;
+ case SWP_ENV:return p->page==SWP_TONE;case SWP_LFO:return e->modern_target>=.5f;
  case SWP_EDIT:return p->page==SWP_SONG;case SWP_GLO:return p->page==SWP_BOB;
  case SWP_HOME_BUTTON:return p->page==SWP_DIRECT;case SWP_SAVE:return p->page==SWP_KEEPS;
  case SWP_ARP:return e->leon_pending||e->solo_from!=0xffff;

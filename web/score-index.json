@@ -1,0 +1,503 @@
+{
+  "schema": 1,
+  "parts": [
+    {
+      "title": "Take Me Back to Tulsa — complete16-bar Leon steel solo",
+      "player": "Leon McAuliffe",
+      "checked": true,
+      "automatic": true,
+      "body_quarters": "32",
+      "quality_status": "manually_checked_complete_source_solo;MIDI/XMLtriplet/tie/polyphonyroundtrip;fullengravinginspected"
+    },
+    {
+      "title": "Spanish Two Step — 4 written bars (steel lead)",
+      "player": "Leon McAuliffe",
+      "checked": true,
+      "automatic": false,
+      "quality_status": "manually_checked_notes_rhythms_rests_within_scope"
+    },
+    {
+      "title": "Bob Wills Special — 1 written bar (steel accompaniment)",
+      "player": "Noel Boggs",
+      "checked": true,
+      "automatic": false,
+      "quality_status": "manually_checked_notes_rhythms_rests_within_scope"
+    },
+    {
+      "title": "Bob Wills Special — 1 written bar (fiddle reference)",
+      "player": "Fiddle reference (unassigned)",
+      "checked": true,
+      "automatic": false,
+      "quality_status": "manually_checked_notes_rhythms_rests_within_scope"
+    },
+    {
+      "title": "When Night Falls — 1 written bar (steel lead)",
+      "player": "Bob Dunn",
+      "checked": true,
+      "automatic": true,
+      "quality_status": "manually_checked_notes_rhythms_rests_within_scope"
+    },
+    {
+      "title": "Troubled Over You — 1 written bar (steel lead)",
+      "player": "Joaquin Murphey",
+      "checked": true,
+      "automatic": true,
+      "quality_status": "manually_checked_notes_rhythms_rests_within_scope"
+    },
+    {
+      "title": "Taking Off",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "An Old Watermill by a Waterfall",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "In El Rancho Grande",
+      "player": "Bob Dunn steel accompaniment",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "My Mary",
+      "player": "Bob Dunn steel countermelody",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Cheesy Breeze",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "I’ll Keep on Loving You",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Wabash Blues",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "When Night Falls",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Wednesday Rag",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "You’re Tired of Me",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Shine on Harvest Moon",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "The House at the End of the Lane",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "I Love You",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Taking Off",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Takin’ Off",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "You’re Tired of Me",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Toodle-Oodle-Oo",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Old Joe Turner Blues",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Blue Over You",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "San Antonio Blues",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "I Can’t Use You Anymore",
+      "player": "Bob Dunn",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Osage Stomp",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Spanish Two Step",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "San Antonio Rose",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Fan It",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "What’s the Matter at the Mill",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "White Heat",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Bleeding Hearted Blues",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Everybody Does It in Hawaii",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "You’re OK",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Lone Star Rag",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Corrine Corrina",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Bob Wills Special",
+      "player": "Leon McAuliffe steel guitar",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "New Worried Mind",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Take Me Back to Tulsa",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "We Might As Well Forget It",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Home in San Antone",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Steel Guitar Rag",
+      "player": "Leon McAuliffe",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Chinese Honeymoon",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Walking Home From an Old Country School",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Mississippi Muddle",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Mississippi Muddle",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "It Ain’t Gonna Rain No More",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Bob Wills Special",
+      "player": "Noel Boggs steel accompaniment",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Bob Wills Special",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "I’m Gonna Get Mad",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "St Louis Blues Pt2",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "That’s All",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Steel guitar Stomp",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Steel Guitar Stomp",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Flamin’ Maime",
+      "player": "Noel Boggs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "You Can’t Break My Heart",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Troubled Over You",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Miss Molly",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Miss Molly",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Shame on You",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "New Panhandle rag",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Blue Blue Eyes",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "I Can Tell Just As Plain",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "It’s A Boy",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Oklahoma Stomp",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "I Can’t Give you Anything But Love",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "New Wabash Cannonball",
+      "player": "Joaquin Murphey",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Bud’s Bounce",
+      "player": "Bud Isaacs",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    },
+    {
+      "title": "Cadillac to Town",
+      "player": "Vance Terry",
+      "checked": false,
+      "automatic": false,
+      "quality_status": "omr_draft_unreviewed"
+    }
+  ]
+}

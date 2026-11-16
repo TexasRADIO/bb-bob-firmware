@@ -67,6 +67,25 @@ static uint32_t steel_now(const sw_showbill *s) {for(uint32_t i=0;i<3;i++)if(s->
 /* the guitarist on stage: the featured one, otherwise this song's turn in the rota (the one the stage draws) */
 static uint32_t guitar_now(const sw_showbill *s) {for(uint32_t i=0;i<3;i++)if(s->who==GUITAR_ROTA[i])return s->who;return GUITAR_ROTA[s->guitar_turn%3u];}
 static const char *const QUAL[9]={"6","7","-7","DIM","7#5","-6","MAJ7","9","AUG"};
+/* A figure is on the bandstand only while its chair's player is switched on (BAND page). */
+static uint32_t chair_of(uint32_t who) {
+ for(uint32_t i=0;i<3;i++) {if(who==STEEL_ROTA[i])return SW_STEEL;if(who==GUITAR_ROTA[i]||who==SB_TINY)return SW_GUITAR;}
+ return who==SB_AL?SW_PIANO:0xffu;
+}
+static uint32_t on_band(const sw_engine *e,uint32_t who) {uint32_t c=chair_of(who);return c==0xffu||((e->players>>c)&1u);}
+/* Director style follows Then/Now: 0 broadcast (Then), 1 music television (Now). */
+static uint32_t tv_style(const sw_engine *e) {return e->modern>=.5f;}
+/* The set for this bar: road for intros, a home set for the head and solos (ballroom for dance
+ * tempos, the studio for slow tunes), the other set for the bridge, the ballroom to finish.
+ * In the Now style the head alternates sets every two bars, cut hard on the bar line. */
+static uint32_t set_for(const sw_showbill *s,const sw_engine *e) {
+ uint32_t bar=e->bar,b=bar<e->song.count?bar:e->song.count-1u,sec=e->song.bars[b].section,home=e->bpm>120?0u:1u;
+ if((bar-s->song_bar0<2u&&bar<4u)||sec==SW_INTRO)return 2u;
+ if(sec==SW_ENDING)return 0u;
+ if(sec==SW_BRIDGE)return home?0u:1u;
+ if(tv_style(e)&&s->now_alt)return home?0u:1u;
+ return home;
+}
 
 /* ---------- drawing primitives ---------- */
 static void box(sw_rectangle r,void *c,int x,int y,int w,int h,uint16_t ink) {
@@ -113,7 +132,11 @@ static void title_in(sw_rectangle r,void *c,const sw_engine *e,int cx,int y,int 
 }
 
 /* ---------- state ---------- */
-void sw_showbill_init(sw_showbill *s) {uint8_t *b=(uint8_t *)s;for(uint32_t i=0;i<sizeof *s;i++)b[i]=0;for(uint32_t i=0;i<SB_FIGURES;i++)s->pose[i]=IDLE_POSE[i];s->song_revision=0xffffffffu;}
+void sw_showbill_init(sw_showbill *s) {uint8_t *b=(uint8_t *)s;for(uint32_t i=0;i<sizeof *s;i++)b[i]=0;for(uint32_t i=0;i<SB_FIGURES;i++)s->pose[i]=IDLE_POSE[i];s->song_revision=0xffffffffu;s->last_bar=0xffffu;}
+void sw_showbill_on_screen(sw_showbill *s,uint32_t shown) {
+ if(shown&&!s->on_screen&&s->curtain_pending) {s->curtain_pending=0;s->curtain_ms=600;}
+ s->on_screen=(uint8_t)(shown!=0);
+}
 void sw_showbill_touch(sw_showbill *s) {s->idle_ms=0;}
 void sw_showbill_prefer(sw_showbill *s,uint32_t pref) {s->pref=(uint8_t)(pref<3?pref:0);s->idle_ms=0;}
 uint32_t sw_showbill_mode(const sw_showbill *s,const sw_engine *e) {
@@ -123,7 +146,9 @@ uint32_t sw_showbill_mode(const sw_showbill *s,const sw_engine *e) {
  return s->idle_ms>=SB_IDLE_MS?SB_LISTEN:SB_PLAY;
 }
 uint32_t sw_showbill_panel_visible(const sw_showbill *s,const sw_engine *e,const sw_panel *p) {
- if((!e->title&&p->page!=SWP_HOME)||p->held_keys||p->buttons)return 1;
+ if((!e->title&&p->page!=SWP_HOME&&p->page!=SWP_DIRECT)||p->held_keys||p->buttons)return 1;
+ /* a band cue hands the screen back to the show quickly */
+ if(!e->title&&p->cue_touch&&p->idle_ms>=SWP_CUE_MS)return sw_showbill_mode(s,e)==SB_PLAY&&s->pref==SB_PREF_PLAY;
  if(!e->title&&p->idle_ms<SB_IDLE_MS)return 1;
  return sw_showbill_mode(s,e)==SB_PLAY;
 }
@@ -171,18 +196,24 @@ void sw_showbill_tick(sw_showbill *s,const sw_engine *e,uint32_t elapsed) {
  /* the camera: cuts only on bar lines */
  uint32_t bar=e->bar;
  if(e->song_revision!=s->song_revision) {if(s->song_revision!=0xffffffffu)s->guitar_turn++;s->song_revision=e->song_revision;s->song_bar0=(uint16_t)bar;s->shot=0;s->who=SB_NONE;}
+ if(s->was_playing&&!e->playing) {if(s->on_screen)s->curtain_ms=600; else s->curtain_pending=1;if(e->bar>=e->song.count)s->encore_ms=6000;}
+ if(e->playing)s->encore_ms=0; else if(s->encore_ms&&s->on_screen&&!s->curtain_ms)s->encore_ms=(uint16_t)(elapsed>=s->encore_ms?0:s->encore_ms-elapsed);
+ if(s->wipe_ms)s->wipe_ms=(uint16_t)(elapsed>=s->wipe_ms?0:s->wipe_ms-elapsed);
+ s->was_playing=(uint8_t)e->playing;
+ if(s->curtain_ms)s->curtain_ms=(uint16_t)(elapsed>=s->curtain_ms?0:s->curtain_ms-elapsed);
  if(!e->playing) {s->shot=0;s->who=SB_NONE;s->in_solo=s->calling=0;return;}
+ s->curtain_pending=0;
  uint32_t b=bar<e->song.count?bar:e->song.count-1u;
  uint32_t feature=e->solo_from!=0xffff&&bar>=e->solo_from&&bar<e->solo_until,tulsa=e->score_playing&&e->score_arrangement;
  uint32_t in_solo=feature||tulsa||e->song.bars[b].section==SW_SOLO,calling=sw_call_active(e);
  if(calling&&!s->calling) {
   uint32_t fig=e->cue_kind<SB_CALLS?sb_call_figure[e->cue_kind]:0u;
-  s->shot=1;s->until_bar=(uint16_t)(bar+1);s->who=(uint8_t)fig;s->next=(uint8_t)(fig?2:0);s->shot_ms=s->ms;
+  s->shot=1;s->until_bar=(uint16_t)(bar+1);s->who=(uint8_t)fig;s->next=(uint8_t)(fig?2:0);s->shot_ms=s->ms;s->hold_bars=0;
  }
  if(in_solo&&!s->in_solo) {
   uint32_t chair=(feature||tulsa)?SW_STEEL:lead_from_notes(s),who=SB_NONE;
   if(chair==SW_STEEL)who=tulsa?SB_LEON:STEEL_ROTA[s->steel_turn++%3u]; else if(chair==SW_GUITAR)who=GUITAR_ROTA[s->guitar_turn++%3u]; else if(chair==SW_PIANO)who=SB_AL;
-  if(who) {s->pose[who]=0;s->shot=1;s->until_bar=(uint16_t)(bar+1);s->who=(uint8_t)who;s->next=2;s->shot_ms=s->ms;}
+  if(who) {s->pose[who]=0;s->shot=1;s->until_bar=(uint16_t)(bar+1);s->who=(uint8_t)who;s->next=2;s->shot_ms=s->ms;s->hold_bars=0;}
   s->solo_bar0=(uint16_t)bar;
  }
  /* a solo trades fours along the chair, so the whole section gets seen; the Tulsa cue itself stays Leon's */
@@ -192,12 +223,35 @@ void sw_showbill_tick(sw_showbill *s,const sw_engine *e,uint32_t elapsed) {
   if(who&&who!=s->who) {s->pose[who]=0;s->shot=2;s->until_bar=(uint16_t)(bar+2);s->who=(uint8_t)who;s->next=0;s->shot_ms=s->ms;}
   s->solo_bar0=(uint16_t)bar;
  }
+ /* the director: with no call or solo on camera, cut on the form (always on a bar line) */
+ if(bar!=s->last_bar) {
+  uint32_t sec=e->song.bars[b].section,was=s->last_section;
+  if(!calling&&!in_solo&&!s->shot&&sec!=was&&s->last_bar!=0xffffu) {
+   if(sec==SW_BRIDGE) { /* the bridge: a push-in on the rhythm section, alternating chairs */
+    uint32_t who=(s->rhythm_turn++&1u)?SB_AL:GUITAR_ROTA[s->guitar_turn%3u];
+    if(!on_band(e,who))who=who==SB_AL?GUITAR_ROTA[s->guitar_turn%3u]:SB_AL;
+    if(on_band(e,who)) {s->pose[who]=0;s->shot=2;s->until_bar=(uint16_t)(bar+2);s->who=(uint8_t)who;s->next=0;s->shot_ms=s->ms;s->hold_bars=0;}
+   } else if((sec==SW_RETURN&&was==SW_BRIDGE)||sec==SW_ENDING) { /* back to the head, or the last chorus: Bob reacts */
+    s->shot=1;s->until_bar=(uint16_t)(bar+1);s->who=SB_NONE;s->next=0;s->shot_ms=s->ms;s->hold_bars=0;
+   }
+  }
+  /* Now style: the head changes set every two bars */
+  if(tv_style(e)&&!(bar&1u))s->now_alt^=1u;
+  s->last_section=(uint8_t)sec;s->last_bar=(uint16_t)bar;
+ }
+ /* a shot that fired behind the controls waits (up to 8 bars) for the player to see it */
+ if(s->shot&&!s->on_screen&&s->hold_bars<8u) {if(bar>=s->until_bar) {s->until_bar=(uint16_t)(bar+1);s->hold_bars++;}s->shot_ms=s->ms;}
  if(s->shot&&bar>=s->until_bar) {
   if(s->next==2&&s->who) {s->shot=2;s->until_bar=(uint16_t)(bar+2);s->next=0;s->shot_ms=s->ms;}
   else {s->shot=0;if(!in_solo)s->who=SB_NONE;}
  }
  if(!in_solo&&!s->shot)s->who=SB_NONE;
  s->in_solo=(uint8_t)in_solo;s->calling=(uint8_t)calling;
+ /* a muted player is never the shot */
+ if(s->shot==2&&s->who&&!on_band(e,s->who)) {s->shot=0;s->who=SB_NONE;}
+ /* the broadcast style opens every new shot with an iris; the TV style just cuts */
+ {uint32_t key=s->shot?(uint32_t)(16u+s->shot*16u+s->who):set_for(s,e);
+  if(key!=s->scene_key) {s->scene_key=(uint8_t)key;if(!tv_style(e)&&s->on_screen)s->wipe_ms=360;}}
 }
 
 /* ---------- scenes ---------- */
@@ -245,7 +299,27 @@ static void couple(sw_rectangle r,void *c,int cx,int base,int face,int lead_leg,
  else PX(-5,y+10,8,3);
  #undef PX
 }
+/* FUNK up: the floor turns to 1982 electro. Solo dancers, wide stance, arms locking into a new
+ * angle on every beat (the robot), a side step every bar. Same ink and scale as the couples. */
+static void electro(sw_rectangle r,void *c,int cx,int base,uint32_t move,int face) {
+ #define PX(dx,y,w,h) box(r,c,face>0?cx+(dx):cx-(dx)-(w),(y),(w),(h),INK)
+ int y=base-36;PX(-3,y,6,6);PX(-5,y+6,10,16);
+ PX(-6,y+22,3,14);PX(3,y+22,3,14);PX(-9,y+34,4,2);PX(5,y+34,4,2); /* wide stance */
+ switch(move&3u) {
+ case 0:PX(-13,y+8,8,3);PX(5,y+8,8,3);PX(-13,y-2,3,10);PX(10,y+10,3,8);break;   /* square arms */
+ case 1:PX(5,y+6,12,3);PX(14,y-4,3,10);PX(-11,y+12,6,3);break;                  /* point up */
+ case 2:PX(-13,y+8,8,3);PX(-13,y+10,3,10);PX(5,y+8,8,3);PX(10,y+10,3,10);break; /* arms down */
+ default:PX(-17,y+7,12,3);PX(5,y+7,12,3);break;                                  /* wave */
+ }
+ #undef PX
+}
 static void dance_floor(const sw_engine *e,sw_rectangle r,void *c) {
+ if(e->hiphop>=.5f) {
+  uint32_t beats=e->song.beats?e->song.beats:4u,tick=e->tick?e->tick-1u:0u,beat=e->bar*beats+tick/2u;
+  int shift=(e->bar&1u)?6:-6;
+  for(int k=0;k<4;k++)electro(r,c,32+k*58+(k&1?-shift:shift),k&1?226:238,(uint32_t)(beat+(uint32_t)k),k&1?-1:1);
+  return;
+ }
  uint32_t beats=e->song.beats?e->song.beats:4u,tick=e->tick?e->tick-1u:0u;
  uint32_t beat=e->bar*beats+tick/2u,quarter=64u*(tick&1u);
  if(e->playing&&e->tick_length&&e->tick_remaining<=e->tick_length)quarter+=64u*(e->tick_length-e->tick_remaining)/e->tick_length;
@@ -277,16 +351,36 @@ static void dance_floor(const sw_engine *e,sw_rectangle r,void *c) {
   couple(r,c,px[k],py[k]+12,fc[k],lead,follow,rise,turnfig&&e->playing);
  }
 }
+/* NOW past halfway: a drum machine on the bandstand lip, its 16 step lamps in the classic
+ * red/orange/yellow/cream groups, the lit lamp chasing the beat; past three quarters a silver
+ * bass box with its two knobs joins it. Drawn from rectangles, no art bank space. */
+static void now_machines(const sw_engine *e,sw_rectangle r,void *c) {
+ if(e->modern<.5f)return;
+ static const uint16_t lamp[4]={0xc0a3u,0xe3a3u,0xef00u,0xf79au};
+ uint32_t tick=e->tick?e->tick-1u:0u,step=(e->bar*8u+tick)*2u%16u;
+ box(r,c,150,139,62,13,INK);box(r,c,151,140,60,4,0x4208u);
+ for(int i=0;i<16;i++) {box(r,c,152+i*3+(i/4)*1,146,2,4,(uint32_t)i==step?CREAM:lamp[i/4]);}
+ if(e->modern>=.75f) {box(r,c,96,141,40,11,0xc618u);box(r,c,97,142,38,1,CREAM);box(r,c,100,145,4,4,INK);box(r,c,108,145,4,4,INK);
+  for(int i=0;i<4;i++)box(r,c,116+i*4,147,3,3,(uint32_t)i==(step/4u)?RUST:0x8410u);}
+}
+/* The APPLAUSE sign, lit (radio set has it painted; the ballroom borrows the NO SPURS board). */
+static void applause(sw_rectangle r,void *c,int x,int y,uint32_t lit) {
+ box(r,c,x,y,54,13,lit?RUST:PLUM);box(r,c,x+1,y+1,52,1,lit?0xfa49u:PLUM);sw_text(r,c,x+3,y+3,"APPLAUSE",1,lit?CREAM:DIM);
+}
 static void ballroom(const sw_showbill *s,const sw_engine *e,sw_rectangle r,void *c) {
  if(BG_(0))blit(r,c,0,0,BG_(0),1); else plain_set(r,c,PINK,MINT);
  title_in(r,c,e,120,31,124,RUST);
  sw_display_bob_at(e,6,46,sw_bob_frame(e),sw_call_active(e),r,c);
  box(r,c,22,110,42,18,MINT);box(r,c,20,108,46,3,GOLD);
  uint32_t mid=centre_of(s),side=(mid==SB_ELDON||mid==SB_JUNIOR||mid==SB_JIMMY)?SB_AL:GUITAR_ROTA[s->guitar_turn%3u];
- if(ART) {stand(r,c,STAGE_(mid,s->pose[mid]%3),120,132);stand(r,c,STAGE_(side,s->pose[side]%3),196,132);}
- else {name_card(r,c,120,112,mid);name_card(r,c,196,112,side);}
+ {uint32_t xs[2]={120,196},ws[2]={mid,side};
+  for(uint32_t i=0;i<2;i++) {int x=(int)xs[i];uint32_t w=ws[i];
+   if(!on_band(e,w)) {box(r,c,x-9,116,18,4,0x8a22u);box(r,c,x-8,120,3,12,0x6181u);box(r,c,x+5,120,3,12,0x6181u);continue;} /* an empty stool */
+   if(ART)stand(r,c,STAGE_(w,s->pose[w]%3),x,132); else name_card(r,c,x,112,w);}}
  const char *w=call_words(e,1);if(w)bubble(r,c,6,44,94,w);
  notes_from(s,r,c,120,196,104,34);
+ now_machines(e,r,c);
+ if(e->song.bars[e->bar<e->song.count?e->bar:e->song.count-1].section==SW_ENDING)applause(r,c,182,27,1);
  const sw_bar *b=&e->song.bars[e->bar<e->song.count?e->bar:e->song.count-1];sw_chord ch=b->chord[e->tick>4?1:0];
  box(r,c,88,160,34,20,INK);box(r,c,122,160,34,20,INK);box(r,c,88,169,68,1,0x39e7u);
  sw_rodeo_key_size(r,c,105-sw_rodeo_key_width_size(ch.root,14)/2,163,ch.root,14,CREAM);say(r,c,139,166,QUAL[ch.quality%9],1,CREAM);
@@ -308,6 +402,7 @@ static void radio(const sw_showbill *s,const sw_engine *e,sw_rectangle r,void *c
  box(r,c,52,120,3,80,0xce79u);box(r,c,44,198,20,3,0xce79u);box(r,c,47,100,13,22,0xce79u);for(int i=0;i<5;i++)box(r,c,48,103+i*4,11,1,0x8c72u);
  notes_from(s,r,c,120,120,120,40);
  chord_bug(e,r,c,6,222,TAN);
+ if(e->song.bars[e->bar<e->song.count?e->bar:e->song.count-1].section==SW_ENDING)applause(r,c,177,33,1);
 }
 static void road(const sw_showbill *s,const sw_engine *e,sw_rectangle r,void *c) {
  if(BG_(2))blit(r,c,0,0,BG_(2),1); else plain_set(r,c,POWDER,MUSTARD);
@@ -333,8 +428,8 @@ static void reaction(const sw_showbill *s,const sw_engine *e,sw_rectangle r,void
  const sb_image *im=ART?(const sb_image *)(sw_call_active(e)?ART->bob_speak:ART->bob_idle):0;
  if(im)blit(r,c,120-(int)im->width,250-2*(int)im->height,im,2);
  else sw_display_bob_at(e,84,92,sw_bob_frame(e),sw_call_active(e),r,c);   /* the linked portrait */
- const char *w=call_words(e,1);if(!w)w=s->next==2&&s->who?"TAKE IT AWAY!":"AH-HA!";
- box(r,c,14,34,212,28,CREAM);box(r,c,136,62,14,6,CREAM);box(r,c,138,68,6,5,CREAM);say(r,c,120,41,w,tw(w,3)<=200?3:2,RUST);
+ const char *w=call_words(e,1);if(!w&&s->next==2&&s->who)w="TAKE IT AWAY!";
+ if(w) {box(r,c,14,34,212,28,CREAM);box(r,c,136,62,14,6,CREAM);box(r,c,138,68,6,5,CREAM);say(r,c,120,41,w,tw(w,3)<=200?3:2,RUST);}
  live_tally(r,c);box(r,c,0,210,240,30,PLUM);box(r,c,0,210,240,3,GOLD);sw_text(r,c,8,218,"BOB WILLS",2,BUTTER);sw_text(r,c,150,222,"BANDLEADER",1,CREAM);
 }
 /* DORMANT alternates the title card with MEET THE BAND: nine players, three to a page, grouped by
@@ -348,7 +443,9 @@ static void dormant_frame(const sw_showbill *s,sw_rectangle r,void *c) {
  for(int i=1;i<29;i++) {uint16_t k=(uint32_t)(i+(int)lit)%3u==0?RUST:GOLD;box(r,c,3,3+i*8,3,3,k);box(r,c,234,3+i*8,3,3,k);}
 }
 static uint32_t lit_pose(const sw_showbill *s,uint32_t i);
-static void meet_the_band(const sw_showbill *s,sw_rectangle r,void *c,uint32_t page) {
+typedef struct {sw_rectangle r;void *c;} sb_grey;
+static void grey_rect(int x,int y,int w,int h,uint16_t ink,void *ctx) {sb_grey *g=ctx;int l=(((ink>>11)&31)*2+((ink>>5)&63)+(ink&31)*2)/6;l=12+l/2;g->r(x,y,w,h,(uint16_t)((l<<11)|((l*2)<<5)|l),g->c);}
+static void meet_the_band(const sw_showbill *s,const sw_engine *e,sw_rectangle r,void *c,uint32_t page) {
  for(int x=0;x<240;x+=12) {box(r,c,x,0,6,150,PINK);box(r,c,x+6,0,6,150,PINKD);}
  box(r,c,0,150,240,90,MINT);box(r,c,0,148,240,3,GOLD);
  dormant_frame(s,r,c);
@@ -356,9 +453,10 @@ static void meet_the_band(const sw_showbill *s,sw_rectangle r,void *c,uint32_t p
  for(uint32_t i=0;i<3;i++) {
   uint32_t who=BAND_PAGE[page%3u][i];int cx=44+(int)i*76;
   /* a small nod on the beat of the title lights, so the card feels alive */
-  const sb_image *im=CORNER_(who,(lit_pose(s,i))%3);
-  if(im)blit(r,c,cx-(int)im->width/2,146-(int)im->height,im,1);
-  ticket(r,c,cx-34,158,68,13,CREAM,MINT);say(r,c,cx,161,NAME[who],1,RUST);say(r,c,cx,176,PART[who],1,DARK);
+  const sb_image *im=CORNER_(who,(lit_pose(s,i))%3);uint32_t in=on_band(e,who);
+  if(im) {if(in)blit(r,c,cx-(int)im->width/2,146-(int)im->height,im,1);
+   else {sb_grey g={r,c};blit(grey_rect,&g,cx-(int)im->width/2,146-(int)im->height,im,1);}}
+  ticket(r,c,cx-34,158,68,13,in?CREAM:0xc618u,MINT);say(r,c,cx,161,NAME[who],1,in?RUST:DIM);say(r,c,cx,176,in?PART[who]:"SITTING OUT",1,DARK);
  }
  say(r,c,120,198,"THE TEXAS PLAYBOYS",1,PLUM);
  for(uint32_t p=0;p<3;p++)box(r,c,108+(int)p*10,216,6,3,p==page%3u?RUST:0x9cd3u);
@@ -366,21 +464,67 @@ static void meet_the_band(const sw_showbill *s,sw_rectangle r,void *c,uint32_t p
 static uint32_t lit_pose(const sw_showbill *s,uint32_t i) {return (s->ms/700u+i)%4u==0?1u:0u;}
 static void dormant(const sw_showbill *s,const sw_engine *e,sw_rectangle r,void *c) {
  uint32_t phase=(s->ms/1000u)%18u;
- if(phase>=6u) {meet_the_band(s,r,c,(phase-6u)/4u);return;}
+ if(phase>=6u) {meet_the_band(s,e,r,c,(phase-6u)/4u);return;}
  box(r,c,0,0,240,240,CREAM);dormant_frame(s,r,c);
  say(r,c,121,11,"BB-BOB",3,RUST);say(r,c,120,10,"BB-BOB",3,DARK);
  /* the art stands clear: no panel over it; the song's name sits on the line beneath */
  sw_display_title_art(r,c,24,32);
  title_in(r,c,e,120,226,212,RUST);
 }
+typedef struct {sw_rectangle r;void *c;uint32_t k;} sb_tint;
+static uint16_t tint_colour(uint16_t v,uint32_t k) {
+ int R=(v>>11)&31,G=(v>>5)&63,B=v&31,l=(R*2+G+B*2)/6; /* 0..31-ish luminance */
+ /* NOW: deep violet shadows -> hot pink mids -> cyan/white highlights */
+ int nr=l<12?6+l:l<24?31:20+(31-l),ng=l<12?2+l:l<24?(l-12)*2:40+(l-24)*3,nb=l<12?12+l:l<24?20:31;
+ if(ng>63)ng=63;if(nr>31)nr=31;
+ R=R+(nr-R)*(int)k/64;G=G+(ng-G)*(int)k/64;B=B+(nb-B)*(int)k/64;
+ return (uint16_t)((R<<11)|(G<<5)|B);
+}
+static void tint_rect(int x,int y,int w,int h,uint16_t ink,void *ctx) {sb_tint *t=ctx;t->r(x,y,w,h,tint_colour(ink,t->k),t->c);}
+static void showbill_draw_plain(const sw_showbill *s,const sw_engine *e,sw_rectangle r,void *c);
 void sw_showbill_draw(const sw_showbill *s,const sw_engine *e,sw_rectangle r,void *c) {
+ uint32_t k=(uint32_t)(e->modern*64.f+.5f);
+ if(k<4||sw_showbill_mode(s,e)==SB_DORMANT) {showbill_draw_plain(s,e,r,c);return;}
+ sb_tint t={r,c,k>64?64:k};showbill_draw_plain(s,e,tint_rect,&t);
+}
+static void showbill_draw_plain(const sw_showbill *s,const sw_engine *e,sw_rectangle r,void *c) {
  uint32_t mode=sw_showbill_mode(s,e);
- if(mode==SB_DORMANT) {dormant(s,e,r,c);return;}
- if(mode!=SB_LISTEN)return;
- if(s->shot==2&&s->who) {close_up(s,e,r,c);return;}
- if(s->shot==1) {reaction(s,e,r,c);return;}
- uint32_t bar=e->bar;
- if(bar-s->song_bar0<2u&&bar<4u) road(s,e,r,c);
- else if(e->bpm<=120) radio(s,e,r,c);
- else ballroom(s,e,r,c);
+ if(mode==SB_DORMANT) {
+  if(s->curtain_ms) { /* the curtain closes on the set, then the showbill returns */
+   int w=(int)(600u-s->curtain_ms)*120/600;
+   if(BG_(0))blit(r,c,0,0,BG_(0),1); else plain_set(r,c,PINK,MINT);
+   for(int x=0;x<w;x+=10) {box(r,c,x,0,8,240,RUST);box(r,c,x+8,0,2,240,PLUM);box(r,c,239-x-8,0,8,240,RUST);box(r,c,239-x-10,0,2,240,PLUM);}
+   box(r,c,0,0,240,14,GOLD);return;
+  }
+  if(s->encore_ms) { /* the band finished the tune: applause, and an encore if the player asks */
+   if(BG_(1))blit(r,c,0,0,BG_(1),1); else plain_set(r,c,TAN,DARK);
+   applause(r,c,177,33,(s->ms/250u)&1u);
+   ticket(r,c,40,150,160,46,CREAM,TAN);say(r,c,120,158,"ENCORE?",3,RUST);say(r,c,120,184,"PRESS PLAY",1,DARK);
+   sw_display_bob_at(e,2,86,0,0,r,c);return;
+  }
+  dormant(s,e,r,c);return;
+ }
+ /* reached only when the panel has handed the screen to the show (idle, or soon after a cue) */
+ uint32_t tv=tv_style(e),set=set_for(s,e);
+ if(s->shot==2&&s->who&&!tv) close_up(s,e,r,c);
+ else if(s->shot==1) reaction(s,e,r,c);
+ else {
+  if(set==2)road(s,e,r,c); else if(set==1)radio(s,e,r,c); else ballroom(s,e,r,c);
+  /* music TV: the soloist rides in a picture-in-picture box instead of a full push-in */
+  if(tv&&s->shot==2&&s->who) {const sb_image *im=CORNER_(s->who,s->pose[s->who]%3);
+   box(r,c,150,14,84,96,CREAM);box(r,c,152,16,80,92,INK);
+   if(im)blit(r,c,192-(int)im->width/2,104-(int)im->height,im,1);
+   box(r,c,152,96,80,12,0xe8f4u);sw_text(r,c,156,99,NAME[s->who],1,CREAM);live_tally(r,c);}
+ }
+ if(tv) {
+  /* the title strip for the first two bars of a tune, then scanlines over everything */
+  if(e->bar-s->song_bar0<4u&&set!=2u) {box(r,c,0,176,240,26,0xe8f4u);box(r,c,0,176,240,2,CREAM);title_in(r,c,e,120,185,228,CREAM);}
+  uint32_t gap=e->modern>=.75f?4u:6u;for(uint32_t y=1;y<240;y+=gap)box(r,c,0,(int)y,240,1,0x3006u);
+ } else {
+  /* the broadcast: rounded film corners, and an iris opening on every new shot */
+  for(int i=0;i<6;i++) {int w=6-i;box(r,c,0,i,w,1,INK);box(r,c,240-w,i,w,1,INK);box(r,c,0,239-i,w,1,INK);box(r,c,240-w,239-i,w,1,INK);}
+  if(s->wipe_ms) {int R=(int)(360u-s->wipe_ms)*175/360;
+   for(int y=0;y<240;y+=2) {int dy=y-120,hw;if(dy*dy>=R*R) {box(r,c,0,y,240,2,INK);continue;}
+    hw=0;while((hw+1)*(hw+1)+dy*dy<R*R)hw++;if(120-hw>0)box(r,c,0,y,120-hw,2,INK);if(120+hw<240)box(r,c,120+hw,y,120-hw,2,INK);}}
+ }
 }

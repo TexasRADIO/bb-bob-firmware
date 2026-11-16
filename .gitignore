@@ -3,3 +3,13 @@ __pycache__/
 /build/host/
 /build/hub-r34/
 /build/repro-public/
+
+# Regenerable target and browser outputs.
+/build/target-base-machine/
+/build/repeat/
+/build/r36-complete/
+/build/r36-repeat/
+/build/browser/
+/build/browser-player/
+/tools/__pycache__/
+/build/editor-candidate/

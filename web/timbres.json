@@ -1,0 +1,66 @@
+{
+  "schema": "bb-bob-timbre-bank/v1",
+  "format": "BBTB v1; exact existing companded bytes",
+  "slot_bytes": 81920,
+  "header_bytes": 512,
+  "pcm_bytes": 79200,
+  "used_bytes": 79712,
+  "padding_bytes": 2208,
+  "header_crc32": 10513509,
+  "payload_crc32": 4043549044,
+  "bank_sha256": "37cef61ad3d458bfdcfddced93dea3bb41bc530dde6d49067fd35cea8320e4de",
+  "entries": [
+    {
+      "id": 1,
+      "symbol": "sw_fiddle_pcm",
+      "offset": 512,
+      "bytes": 28800,
+      "rows": 4,
+      "row_bytes": 7200,
+      "crc32": 945734121,
+      "sha256": "950e9169f472486fcc30b0721aad5f98d92d0642dc5494202d9686b0ba05294e",
+      "source": "src/timbres.h",
+      "source_sha256": "7b5321801501c38807f94851a11bb6da0ff056c0e171147f39f26587c7807a6b"
+    },
+    {
+      "id": 2,
+      "symbol": "sw_fiddle_short_pcm",
+      "offset": 29312,
+      "bytes": 28800,
+      "rows": 8,
+      "row_bytes": 3600,
+      "crc32": 4096446007,
+      "sha256": "a2286459e4aaaeeb19b2b7a0aa8b488a673350c12c3ba0d1165679799ab1e124",
+      "source": "src/timbres.h",
+      "source_sha256": "7b5321801501c38807f94851a11bb6da0ff056c0e171147f39f26587c7807a6b"
+    },
+    {
+      "id": 3,
+      "symbol": "sw_upright_pcm",
+      "offset": 58112,
+      "bytes": 9600,
+      "rows": 2,
+      "row_bytes": 4800,
+      "crc32": 1286985810,
+      "sha256": "d7575df7bc938dea9c947ee2880de2d5abf497fc491478a5c9929e5a801032f2",
+      "source": "src/rhythm_timbres.h",
+      "source_sha256": "97f2e3ab0e184ee4f2088eb83393055a9a71d52623a4d12a5e74358791f016d3"
+    },
+    {
+      "id": 4,
+      "symbol": "sw_piano_pcm",
+      "offset": 67712,
+      "bytes": 12000,
+      "rows": 2,
+      "row_bytes": 6000,
+      "crc32": 728434200,
+      "sha256": "00ad871222728026edca32649d2408c5dcf03a7dc7da6b3bad2dfc7b55dc5791",
+      "source": "src/timbres.h",
+      "source_sha256": "7b5321801501c38807f94851a11bb6da0ff056c0e171147f39f26587c7807a6b"
+    }
+  ],
+  "quantization_changed": false,
+  "device_contacted": false,
+  "installed": false,
+  "install_permitted": false
+}

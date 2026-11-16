@@ -105,7 +105,7 @@ const char *sw_host_state(void) {
 static void rectangle(int x,int y,int w,int h,uint16_t colour,void *context) {
  (void)context;for(int j=y;j<y+h&&j<240;j++)for(int i=x;i<x+w&&i<240;i++)if(i>=0&&j>=0)screen[j*240+i]=colour;
 }
-const uint16_t *sw_host_screen(void) {if(panel_enabled) {if(sw_showbill_panel_visible(&showbill,&host,&panel))sw_panel_display(&host,&panel,rectangle,0);else sw_showbill_draw(&showbill,&host,rectangle,0);}else sw_display(&host,rectangle,0);return screen;}
+const uint16_t *sw_host_screen(void) {if(panel_enabled) {if(sw_showbill_panel_visible(&showbill,&host,&panel)) {sw_showbill_on_screen(&showbill,0);sw_panel_display(&host,&panel,rectangle,0);}else {sw_showbill_on_screen(&showbill,1);sw_showbill_draw(&showbill,&host,rectangle,0);}}else sw_display(&host,rectangle,0);return screen;}
 const uint16_t *sw_host_bob_screen(uint32_t frame,uint32_t speaking) {
  rectangle(164,29,76,81,0x2a26,0);sw_display_bob(&host,frame,speaking,rectangle,0);return screen;
 }

@@ -18,6 +18,9 @@ typedef struct {
  uint8_t pref, shot, who, next, in_solo, calling, steel_turn, note_next, guitar_turn;
  uint8_t pose[SB_FIGURES];
  uint16_t steel_quiet_ms; uint8_t last_beat;
+ /* director + presentation state (display-only) */
+ uint16_t last_bar, curtain_ms; uint8_t last_section, hold_bars, on_screen, was_playing, curtain_pending, rhythm_turn;
+ uint16_t wipe_ms, encore_ms; uint8_t scene_key, now_alt;
  sb_note notes[SB_NOTES];
 } sw_showbill;
 void sw_showbill_init(sw_showbill *s);
@@ -33,6 +36,9 @@ uint32_t sw_showbill_mode(const sw_showbill *s,const sw_engine *e);
 uint32_t sw_showbill_panel_visible(const sw_showbill *s,const sw_engine *e,const sw_panel *p);
 /* Draws DORMANT or LISTEN. In PLAY the platform keeps drawing sw_panel_display(). */
 void sw_showbill_draw(const sw_showbill *s,const sw_engine *e,sw_rectangle r,void *c);
+/* The platform reports, once per frame, whether the show (not the panel) is on screen, so a
+   payoff shot that fired behind the controls is held until the player can see it. */
+void sw_showbill_on_screen(sw_showbill *s,uint32_t shown);
 /* Art comes through one table. On the device it is filled from the region-B art bank (M1a) once that bank
  * validates, and stays NULL otherwise: every screen then draws its no-bank form (linked Bob title and
  * portrait, plain sets, name cards instead of figures), so a missing or wrong bank never blanks the screen.

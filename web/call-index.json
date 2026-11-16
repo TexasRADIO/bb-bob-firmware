@@ -1,0 +1,3179 @@
+{
+  "schema": "bb-bob-reviewed-playback/v2",
+  "historic": true,
+  "pool_counts": {
+    "0": 29,
+    "1": 34,
+    "2": 268,
+    "3": 21,
+    "4": 5,
+    "5": 63,
+    "6": 0,
+    "7": 0
+  },
+  "bank_sha256": "b71e9eb5badb2edadb2e603b70e1e1debf8737b345821fe7047ea79d5d332eb0",
+  "bank_bytes": 7793413,
+  "review_status": "Recorded calls and band samples",
+  "calls": [
+    {
+      "id": "call-f524bfdb8605c5a4",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "signature_aah_haa",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 31200,
+      "rate": 12000
+    },
+    {
+      "id": "call-63f46bdaa3bb0bd9",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 26041,
+      "rate": 12000
+    },
+    {
+      "id": "call-1edc9fc0ede8f5e4",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 25440,
+      "rate": 12000
+    },
+    {
+      "id": "call-ca4df0cb8fa64453",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 14640,
+      "rate": 12000
+    },
+    {
+      "id": "call-ad3d1287d4b4bf77",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 11760,
+      "rate": 12000
+    },
+    {
+      "id": "call-99d1404b58780c35",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 21241,
+      "rate": 12000
+    },
+    {
+      "id": "call-a104722768f68bf3",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 15961,
+      "rate": 12000
+    },
+    {
+      "id": "call-fd3bba48ab8c06ea",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 9360,
+      "rate": 12000
+    },
+    {
+      "id": "call-fe2c5fa54a366f1b",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 14160,
+      "rate": 12000
+    },
+    {
+      "id": "call-b8889f55161431a2",
+      "label": "Band call: louie",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "louie"
+      ],
+      "samples": 49440,
+      "rate": 12000
+    },
+    {
+      "id": "call-039ea6bd32659eb8",
+      "label": "Band call: tiny",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "tiny"
+      ],
+      "samples": 32640,
+      "rate": 12000
+    },
+    {
+      "id": "call-d091c8f3dd76b348",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 32400,
+      "rate": 12000
+    },
+    {
+      "id": "call-e8668b5568b2f881",
+      "label": "Band call: johnny",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "johnny"
+      ],
+      "samples": 21840,
+      "rate": 12000
+    },
+    {
+      "id": "call-39eb0ed550bc3ec7",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 22080,
+      "rate": 12000
+    },
+    {
+      "id": "call-1f56892cdda03d48",
+      "label": "Band call: louie",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "louie"
+      ],
+      "samples": 48480,
+      "rate": 12000
+    },
+    {
+      "id": "call-ba7071e453fce6f6",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 60240,
+      "rate": 12000
+    },
+    {
+      "id": "call-378d975a4ea54783",
+      "label": "Band call: brother-john",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "brother-john"
+      ],
+      "samples": 59040,
+      "rate": 12000
+    },
+    {
+      "id": "call-289a4dee5dd66a1f",
+      "label": "Band call: al",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "al"
+      ],
+      "samples": 51840,
+      "rate": 12000
+    },
+    {
+      "id": "call-2cc10426bfaf4720",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 27600,
+      "rate": 12000
+    },
+    {
+      "id": "call-efd8feb3c778733e",
+      "label": "BAND CALL",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [],
+      "samples": 15840,
+      "rate": 12000
+    },
+    {
+      "id": "call-9e30b517eeb384a9",
+      "label": "Band call: peewee",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "peewee"
+      ],
+      "samples": 29520,
+      "rate": 12000
+    },
+    {
+      "id": "call-77c8728c4192c39f",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 24480,
+      "rate": 12000
+    },
+    {
+      "id": "call-303c26250444a201",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 47760,
+      "rate": 12000
+    },
+    {
+      "id": "call-90869fe51dbe8a04",
+      "label": "Band call: al",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "al"
+      ],
+      "samples": 29760,
+      "rate": 12000
+    },
+    {
+      "id": "call-f34eceb77acbe3c2",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 7440,
+      "rate": 12000
+    },
+    {
+      "id": "call-1331371bc542d20f",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 8160,
+      "rate": 12000
+    },
+    {
+      "id": "call-9130ee5748b86d8e",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 22080,
+      "rate": 12000
+    },
+    {
+      "id": "call-05c38145d0ae8478",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 25440,
+      "rate": 12000
+    },
+    {
+      "id": "call-2e50e66757cb3346",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 25200,
+      "rate": 12000
+    },
+    {
+      "id": "call-89e7cf8cd123ebbd",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 30480,
+      "rate": 12000
+    },
+    {
+      "id": "call-898508cd177aa1d6",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 24240,
+      "rate": 12000
+    },
+    {
+      "id": "call-a144a8f04c71d7c6",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 37440,
+      "rate": 12000
+    },
+    {
+      "id": "call-e4f7a095e2647903",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 28560,
+      "rate": 12000
+    },
+    {
+      "id": "call-5f018764138b7fe9",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 53280,
+      "rate": 12000
+    },
+    {
+      "id": "call-5d77439e2323d2b7",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 33360,
+      "rate": 12000
+    },
+    {
+      "id": "call-ae415653562565c4",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 59760,
+      "rate": 12000
+    },
+    {
+      "id": "call-69fd6a79f0b3b796",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 32640,
+      "rate": 12000
+    },
+    {
+      "id": "call-a57f1e90e8e247e5",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 38400,
+      "rate": 12000
+    },
+    {
+      "id": "call-f21e343616c11f6e",
+      "label": "Band call: al",
+      "pad_label": "BAND CALL",
+      "family": "encouragement",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "al"
+      ],
+      "samples": 13200,
+      "rate": 12000
+    },
+    {
+      "id": "call-877eb99098d6afae",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 21840,
+      "rate": 12000
+    },
+    {
+      "id": "call-5743e68caae3dfd7",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 30480,
+      "rate": 12000
+    },
+    {
+      "id": "call-c13d38ab6bf72c52",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 12000,
+      "rate": 12000
+    },
+    {
+      "id": "call-5d736f721e8f9a7c",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 26160,
+      "rate": 12000
+    },
+    {
+      "id": "call-e6788d5df81bd52e",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 19680,
+      "rate": 12000
+    },
+    {
+      "id": "call-9fd4350c65308fed",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 33840,
+      "rate": 12000
+    },
+    {
+      "id": "call-516d0094cfa96b49",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 27840,
+      "rate": 12000
+    },
+    {
+      "id": "call-831ab14fc69b8c82",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 30000,
+      "rate": 12000
+    },
+    {
+      "id": "call-0cc453073f5196c0",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 14160,
+      "rate": 12000
+    },
+    {
+      "id": "call-60105bad90d9079d",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 47760,
+      "rate": 12000
+    },
+    {
+      "id": "call-01604ff27313f7b4",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 6720,
+      "rate": 12000
+    },
+    {
+      "id": "call-0665469f10345909",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 37680,
+      "rate": 12000
+    },
+    {
+      "id": "call-3dfc0ba07c44015c",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 19200,
+      "rate": 12000
+    },
+    {
+      "id": "call-93c78586d37396b0",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 7200,
+      "rate": 12000
+    },
+    {
+      "id": "call-c311cea4560f79a6",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 31680,
+      "rate": 12000
+    },
+    {
+      "id": "call-bdf93bf66cb6e06c",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 12000,
+      "rate": 12000
+    },
+    {
+      "id": "call-f3ce0d29728942a1",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 36720,
+      "rate": 12000
+    },
+    {
+      "id": "call-62614eabb802cc23",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 42720,
+      "rate": 12000
+    },
+    {
+      "id": "call-c91e329461f6aed9",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 19680,
+      "rate": 12000
+    },
+    {
+      "id": "call-23184823db432042",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 22681,
+      "rate": 12000
+    },
+    {
+      "id": "call-d60b0da6b39675a4",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 21241,
+      "rate": 12000
+    },
+    {
+      "id": "call-8336b68a64ff41fa",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 12361,
+      "rate": 12000
+    },
+    {
+      "id": "call-c8d264fdb4c2cd44",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 11401,
+      "rate": 12000
+    },
+    {
+      "id": "call-c271f1805e4b67f1",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 17161,
+      "rate": 12000
+    },
+    {
+      "id": "call-07f364f88742ae39",
+      "label": "Band call: jesse",
+      "pad_label": "BAND CALL",
+      "family": "other_call",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "jesse"
+      ],
+      "samples": 13321,
+      "rate": 12000
+    },
+    {
+      "id": "call-a0e45d9a2b4dde4a",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 33721,
+      "rate": 12000
+    },
+    {
+      "id": "call-dc6b54c7074e7c4a",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 10681,
+      "rate": 12000
+    },
+    {
+      "id": "call-4aa756f7d01aaff3",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 32041,
+      "rate": 12000
+    },
+    {
+      "id": "call-a12a191e39b25d31",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 14041,
+      "rate": 12000
+    },
+    {
+      "id": "call-a70f61240f4b3d6f",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 16201,
+      "rate": 12000
+    },
+    {
+      "id": "call-78dceeab7e7e073e",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 11401,
+      "rate": 12000
+    },
+    {
+      "id": "call-d9f79b44d43ac2e3",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 19561,
+      "rate": 12000
+    },
+    {
+      "id": "call-1611920248f6fedf",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 6841,
+      "rate": 12000
+    },
+    {
+      "id": "call-aefd5200c302a9db",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 28921,
+      "rate": 12000
+    },
+    {
+      "id": "call-6547a818173f06d2",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 38041,
+      "rate": 12000
+    },
+    {
+      "id": "call-6b803f3b96801f05",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 35641,
+      "rate": 12000
+    },
+    {
+      "id": "call-b7b91569bb5abfb1",
+      "label": "Band call: louie",
+      "pad_label": "BAND CALL",
+      "family": "other_call",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "louie"
+      ],
+      "samples": 19321,
+      "rate": 12000
+    },
+    {
+      "id": "call-adac88036d0f9dff",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 12601,
+      "rate": 12000
+    },
+    {
+      "id": "call-61b1bacdb5519ca0",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 7321,
+      "rate": 12000
+    },
+    {
+      "id": "call-1b1da2784576f238",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 33960,
+      "rate": 12000
+    },
+    {
+      "id": "call-cc733fb07c273b93",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 17401,
+      "rate": 12000
+    },
+    {
+      "id": "call-6da6ed8ad834125e",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 15241,
+      "rate": 12000
+    },
+    {
+      "id": "call-cc2e34cd8ecd51f4",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 7081,
+      "rate": 12000
+    },
+    {
+      "id": "call-65993d597e347dd2",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 19321,
+      "rate": 12000
+    },
+    {
+      "id": "call-69087da4e17be8db",
+      "label": "Band call: jesse, peewee",
+      "pad_label": "BAND CALL",
+      "family": "other_call",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "jesse",
+        "peewee"
+      ],
+      "samples": 14761,
+      "rate": 12000
+    },
+    {
+      "id": "call-4fdeadb3be8b7466",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 25800,
+      "rate": 12000
+    },
+    {
+      "id": "call-36380d85663c2cbb",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 17161,
+      "rate": 12000
+    },
+    {
+      "id": "call-cc2b27848af6628b",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 16200,
+      "rate": 12000
+    },
+    {
+      "id": "call-38c0e31c0be342e9",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 28441,
+      "rate": 12000
+    },
+    {
+      "id": "call-93182493a4a24470",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 28201,
+      "rate": 12000
+    },
+    {
+      "id": "call-94bb483a9ce3b7c4",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 8761,
+      "rate": 12000
+    },
+    {
+      "id": "call-af26be27069d34ef",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 12841,
+      "rate": 12000
+    },
+    {
+      "id": "call-1144fd3674bb4b71",
+      "label": "Band call: sleepy",
+      "pad_label": "BAND CALL",
+      "family": "other_call",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "sleepy"
+      ],
+      "samples": 39001,
+      "rate": 12000
+    },
+    {
+      "id": "call-6e386f610d42a28c",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 18240,
+      "rate": 12000
+    },
+    {
+      "id": "call-0a91e24fcd7b4863",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 8400,
+      "rate": 12000
+    },
+    {
+      "id": "call-c94d8a127ce3140a",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 12121,
+      "rate": 12000
+    },
+    {
+      "id": "call-24fdbd24ce1ff4c6",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 11401,
+      "rate": 12000
+    },
+    {
+      "id": "call-35f6f1a5fb6e7042",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "other_call",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 38281,
+      "rate": 12000
+    },
+    {
+      "id": "call-a40158835a63c638",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 8761,
+      "rate": 12000
+    },
+    {
+      "id": "call-b91c519d13a6cc47",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 21481,
+      "rate": 12000
+    },
+    {
+      "id": "call-e572d5ff9f72cac3",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 21961,
+      "rate": 12000
+    },
+    {
+      "id": "call-78d5c0698b8a00ee",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 21481,
+      "rate": 12000
+    },
+    {
+      "id": "call-4c978a9d973ce851",
+      "label": "Band call: charlie",
+      "pad_label": "BAND CALL",
+      "family": "other_call",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "charlie"
+      ],
+      "samples": 16201,
+      "rate": 12000
+    },
+    {
+      "id": "call-d9ac8605643daf76",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "other_call",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 8281,
+      "rate": 12000
+    },
+    {
+      "id": "call-7d829aaadec26089",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 12960,
+      "rate": 12000
+    },
+    {
+      "id": "call-fa869d224de5ec31",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 9001,
+      "rate": 12000
+    },
+    {
+      "id": "call-fd5148baa54a6aa6",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 9001,
+      "rate": 12000
+    },
+    {
+      "id": "call-ed1298783101bf4f",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 12720,
+      "rate": 12000
+    },
+    {
+      "id": "call-fcf7de0c3b9a128b",
+      "label": "Band call: herb",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "herb"
+      ],
+      "samples": 47520,
+      "rate": 12000
+    },
+    {
+      "id": "call-e2984a13d4a34930",
+      "label": "Band call: herb",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "herb"
+      ],
+      "samples": 14400,
+      "rate": 12000
+    },
+    {
+      "id": "call-0465c00df85d826f",
+      "label": "Band call: herb",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "herb"
+      ],
+      "samples": 19680,
+      "rate": 12000
+    },
+    {
+      "id": "call-d2ae263da69f5b59",
+      "label": "Band call: herb",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "herb"
+      ],
+      "samples": 32640,
+      "rate": 12000
+    },
+    {
+      "id": "call-a0ec70b3dee3c772",
+      "label": "Band call: eldon, leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "eldon",
+        "leon"
+      ],
+      "samples": 46800,
+      "rate": 12000
+    },
+    {
+      "id": "call-8ed69ecb548f3936",
+      "label": "Band call: junior",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "junior"
+      ],
+      "samples": 61680,
+      "rate": 12000
+    },
+    {
+      "id": "call-5130b790c3103091",
+      "label": "Band call: herb",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "herb"
+      ],
+      "samples": 25920,
+      "rate": 12000
+    },
+    {
+      "id": "call-636d1943b2747fe0",
+      "label": "Band call: tiny",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "tiny"
+      ],
+      "samples": 16320,
+      "rate": 12000
+    },
+    {
+      "id": "call-5b6809d40a74117f",
+      "label": "Band call: tiny",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "tiny"
+      ],
+      "samples": 24720,
+      "rate": 12000
+    },
+    {
+      "id": "call-383d1cbca4417ff4",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 29760,
+      "rate": 12000
+    },
+    {
+      "id": "call-f53a2a71ff054415",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 8160,
+      "rate": 12000
+    },
+    {
+      "id": "call-c76331008f394df2",
+      "label": "Alright!",
+      "pad_label": "ALL RIGHT!",
+      "family": "alright",
+      "pool_flags": 20,
+      "cue_target_characters": [],
+      "samples": 13440,
+      "rate": 12000
+    },
+    {
+      "id": "call-28ac45e12315b8b3",
+      "label": "Yeah!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 7440,
+      "rate": 12000
+    },
+    {
+      "id": "call-a8c527eba4cfa443",
+      "label": "Alright!",
+      "pad_label": "ALL RIGHT!",
+      "family": "alright",
+      "pool_flags": 20,
+      "cue_target_characters": [],
+      "samples": 28080,
+      "rate": 12000
+    },
+    {
+      "id": "call-e78d5d5c59f6a4ef",
+      "label": "Yeah!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 7680,
+      "rate": 12000
+    },
+    {
+      "id": "call-6ece23fb4a47554e",
+      "label": "Yeah!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 24960,
+      "rate": 12000
+    },
+    {
+      "id": "call-5c55bdb0f9c0ab73",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 28080,
+      "rate": 12000
+    },
+    {
+      "id": "call-b26292a41c47d587",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 53520,
+      "rate": 12000
+    },
+    {
+      "id": "call-13d482f1de519d96",
+      "label": "Yeah!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 7440,
+      "rate": 12000
+    },
+    {
+      "id": "call-d8cdfb142cc7e7c0",
+      "label": "Ah-ha!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 59040,
+      "rate": 12000
+    },
+    {
+      "id": "call-28a9a765a7ee639e",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 29280,
+      "rate": 12000
+    },
+    {
+      "id": "call-1383808c61352609",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 23040,
+      "rate": 12000
+    },
+    {
+      "id": "call-735723f4b9b15eb2",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 37200,
+      "rate": 12000
+    },
+    {
+      "id": "call-d896c1670db08ea6",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 37200,
+      "rate": 12000
+    },
+    {
+      "id": "call-508ca23d3a66c9f8",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 34560,
+      "rate": 12000
+    },
+    {
+      "id": "call-5da0e2568300b332",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 41520,
+      "rate": 12000
+    },
+    {
+      "id": "call-ff9442638078e50a",
+      "label": "Yeah!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 10800,
+      "rate": 12000
+    },
+    {
+      "id": "call-8726afefe323112c",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 45360,
+      "rate": 12000
+    },
+    {
+      "id": "call-964f4c644fa6b7de",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 27840,
+      "rate": 12000
+    },
+    {
+      "id": "call-fe4d8f100551af64",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 10560,
+      "rate": 12000
+    },
+    {
+      "id": "call-e297eebf588deee9",
+      "label": "Alright!",
+      "pad_label": "ALL RIGHT!",
+      "family": "alright",
+      "pool_flags": 20,
+      "cue_target_characters": [],
+      "samples": 23760,
+      "rate": 12000
+    },
+    {
+      "id": "call-9449290ec6918605",
+      "label": "Leon",
+      "pad_label": "BAND CALL",
+      "family": "encouragement",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 28800,
+      "rate": 12000
+    },
+    {
+      "id": "call-cfab6a6174d38c29",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 26160,
+      "rate": 12000
+    },
+    {
+      "id": "call-97ca0af6454d63ed",
+      "label": "Alright!",
+      "pad_label": "ALL RIGHT!",
+      "family": "alright",
+      "pool_flags": 20,
+      "cue_target_characters": [],
+      "samples": 36480,
+      "rate": 12000
+    },
+    {
+      "id": "call-a59884f319040951",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 28320,
+      "rate": 12000
+    },
+    {
+      "id": "call-530a2ce761ada0b7",
+      "label": "Yeah!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 12000,
+      "rate": 12000
+    },
+    {
+      "id": "call-dfda7177432fc476",
+      "label": "Alright!",
+      "pad_label": "ALL RIGHT!",
+      "family": "alright",
+      "pool_flags": 20,
+      "cue_target_characters": [],
+      "samples": 18720,
+      "rate": 12000
+    },
+    {
+      "id": "call-de3f631bcb8f4f2c",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 10921,
+      "rate": 12000
+    },
+    {
+      "id": "call-6d575be6d8d4cbf4",
+      "label": "that's all.",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 14761,
+      "rate": 12000
+    },
+    {
+      "id": "call-98880ec037e59c2f",
+      "label": "Ah-ha!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 22681,
+      "rate": 12000
+    },
+    {
+      "id": "call-20d28aded680d5ce",
+      "label": "Ah-ha!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 19081,
+      "rate": 12000
+    },
+    {
+      "id": "call-c6eebff7147c4243",
+      "label": "Ah Swing!",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 12841,
+      "rate": 12000
+    },
+    {
+      "id": "call-4f0573fe99e11ee8",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 10441,
+      "rate": 12000
+    },
+    {
+      "id": "call-9b44f1dbe3dcce80",
+      "label": "Here they are again, folks",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 15961,
+      "rate": 12000
+    },
+    {
+      "id": "call-27d70bcbc90e3741",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 11161,
+      "rate": 12000
+    },
+    {
+      "id": "call-20ef0ce89a8c9507",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 8761,
+      "rate": 12000
+    },
+    {
+      "id": "call-f19336826afe987c",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 5401,
+      "rate": 12000
+    },
+    {
+      "id": "call-12a97888a253619a",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 5881,
+      "rate": 12000
+    },
+    {
+      "id": "call-28d43ce49057c4a6",
+      "label": "when I hear that melody",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 47641,
+      "rate": 12000
+    },
+    {
+      "id": "call-bf11b0b4c705489f",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 17161,
+      "rate": 12000
+    },
+    {
+      "id": "call-a50360cb35ab23b1",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 8761,
+      "rate": 12000
+    },
+    {
+      "id": "call-c52630cc9a51f329",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 19801,
+      "rate": 12000
+    },
+    {
+      "id": "call-8874c0679d87556f",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 9721,
+      "rate": 12000
+    },
+    {
+      "id": "call-697d852fbee28854",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 12601,
+      "rate": 12000
+    },
+    {
+      "id": "call-7bcc643ceb431a15",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 15241,
+      "rate": 12000
+    },
+    {
+      "id": "call-5aa1f2d48a97aea8",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 22441,
+      "rate": 12000
+    },
+    {
+      "id": "call-9eca2eb6085042cb",
+      "label": "another",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 7801,
+      "rate": 12000
+    },
+    {
+      "id": "call-46f8bed520f363cd",
+      "label": "Well, say you like a piano too?",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 22441,
+      "rate": 12000
+    },
+    {
+      "id": "call-5ab3bc280e7546ab",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 10441,
+      "rate": 12000
+    },
+    {
+      "id": "call-cba8f104955b30da",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 28921,
+      "rate": 12000
+    },
+    {
+      "id": "call-d132da934f35304a",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 8041,
+      "rate": 12000
+    },
+    {
+      "id": "call-1bf81b381c2fbd8a",
+      "label": "Band call: charlie",
+      "pad_label": "BAND CALL",
+      "family": "encouragement",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "charlie"
+      ],
+      "samples": 29760,
+      "rate": 12000
+    },
+    {
+      "id": "call-dceb780a3a0b99e1",
+      "label": "Band call: junior",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "junior"
+      ],
+      "samples": 45840,
+      "rate": 12000
+    },
+    {
+      "id": "call-17d5082e4dca1d66",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 28800,
+      "rate": 12000
+    },
+    {
+      "id": "call-e5e1df7adc5958dc",
+      "label": "Band call: eldon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "eldon"
+      ],
+      "samples": 19680,
+      "rate": 12000
+    },
+    {
+      "id": "call-f882ce1f6e7029a2",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 5150,
+      "rate": 12000
+    },
+    {
+      "id": "call-53cf80f4644ebdb1",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 12214,
+      "rate": 12000
+    },
+    {
+      "id": "call-39efdfb3e178aa02",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 32448,
+      "rate": 12000
+    },
+    {
+      "id": "call-4263476cbcf8f330",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 6946,
+      "rate": 12000
+    },
+    {
+      "id": "call-bb216aeed02456e8",
+      "label": "Band call: jesse",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "jesse"
+      ],
+      "samples": 19877,
+      "rate": 12000
+    },
+    {
+      "id": "call-5fb41016dba9dad0",
+      "label": "Band call: tommy",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "tommy"
+      ],
+      "samples": 13172,
+      "rate": 12000
+    },
+    {
+      "id": "call-c024be81876cd5bb",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 36639,
+      "rate": 12000
+    },
+    {
+      "id": "call-5912ed9600279b2f",
+      "label": "Band call: smokey",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "smokey"
+      ],
+      "samples": 20715,
+      "rate": 12000
+    },
+    {
+      "id": "call-ebafe4bdb3ba554b",
+      "label": "Band call: jesse",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "jesse"
+      ],
+      "samples": 22750,
+      "rate": 12000
+    },
+    {
+      "id": "call-a83f9b7df70f84d3",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 14609,
+      "rate": 12000
+    },
+    {
+      "id": "call-97164c3569a53927",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 10059,
+      "rate": 12000
+    },
+    {
+      "id": "call-b12739178ce82187",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 15447,
+      "rate": 12000
+    },
+    {
+      "id": "call-8df47eaf235f1763",
+      "label": "Band call: tommy",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "tommy"
+      ],
+      "samples": 17842,
+      "rate": 12000
+    },
+    {
+      "id": "call-a610f85371a46a2b",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 14968,
+      "rate": 12000
+    },
+    {
+      "id": "call-9baeac514b4d3423",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 10418,
+      "rate": 12000
+    },
+    {
+      "id": "call-75f779bf8ccf15b6",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 15926,
+      "rate": 12000
+    },
+    {
+      "id": "call-1f078b252ea18d3c",
+      "label": "Band call: johnny",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "johnny"
+      ],
+      "samples": 19757,
+      "rate": 12000
+    },
+    {
+      "id": "call-6b5cb7cc9759b75f",
+      "label": "Band call: jesse",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "jesse"
+      ],
+      "samples": 11496,
+      "rate": 12000
+    },
+    {
+      "id": "call-e1f4b5d973cdf663",
+      "label": "Band call: al",
+      "pad_label": "BAND CALL",
+      "family": "encouragement",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "al"
+      ],
+      "samples": 12693,
+      "rate": 12000
+    },
+    {
+      "id": "call-77bced8de0ca7c12",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 17003,
+      "rate": 12000
+    },
+    {
+      "id": "call-6093c05cd8cd3ad6",
+      "label": "Band call: tommy",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "tommy"
+      ],
+      "samples": 19757,
+      "rate": 12000
+    },
+    {
+      "id": "call-59817d02034bfe53",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 13292,
+      "rate": 12000
+    },
+    {
+      "id": "call-d0477e00a0670ef8",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 17722,
+      "rate": 12000
+    },
+    {
+      "id": "call-2fa9fcddbeb97840",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 21673,
+      "rate": 12000
+    },
+    {
+      "id": "call-3772455887f8eef6",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 7904,
+      "rate": 12000
+    },
+    {
+      "id": "call-40d5573bbd97f08a",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 20955,
+      "rate": 12000
+    },
+    {
+      "id": "call-5de6dfdfba59f59e",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 15088,
+      "rate": 12000
+    },
+    {
+      "id": "call-bf48f41570acff30",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 20236,
+      "rate": 12000
+    },
+    {
+      "id": "call-be9dcc78e672acb4",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 11975,
+      "rate": 12000
+    },
+    {
+      "id": "call-ea2df9a74aa9ad3f",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 9701,
+      "rate": 12000
+    },
+    {
+      "id": "call-d2b723a1eed4d39d",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 14849,
+      "rate": 12000
+    },
+    {
+      "id": "call-9e882a13d2f0b25b",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 10538,
+      "rate": 12000
+    },
+    {
+      "id": "call-546dcf7df8bec8a4",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 8742,
+      "rate": 12000
+    },
+    {
+      "id": "call-20a75d9a5d1c7b4a",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 15567,
+      "rate": 12000
+    },
+    {
+      "id": "call-3e4558590edbaf38",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 10299,
+      "rate": 12000
+    },
+    {
+      "id": "call-393e752432cd5d23",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 4911,
+      "rate": 12000
+    },
+    {
+      "id": "call-1525ba3c449e4fa1",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 5749,
+      "rate": 12000
+    },
+    {
+      "id": "call-cc5141900a00995c",
+      "label": "Band call: noel",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "noel"
+      ],
+      "samples": 22272,
+      "rate": 12000
+    },
+    {
+      "id": "call-056d4f1f10775a4f",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 12693,
+      "rate": 12000
+    },
+    {
+      "id": "call-f3138724c168b910",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 6827,
+      "rate": 12000
+    },
+    {
+      "id": "call-7d813b76a8cefe5f",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 11975,
+      "rate": 12000
+    },
+    {
+      "id": "call-2933862cfdaf3191",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 7425,
+      "rate": 12000
+    },
+    {
+      "id": "call-521bc24487abfa38",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 25265,
+      "rate": 12000
+    },
+    {
+      "id": "call-ac94c16914ec6b86",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 6827,
+      "rate": 12000
+    },
+    {
+      "id": "call-20dbb191ebb6bb38",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 13412,
+      "rate": 12000
+    },
+    {
+      "id": "call-1138e35fac683f2b",
+      "label": "Band call: tommy",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "tommy"
+      ],
+      "samples": 29814,
+      "rate": 12000
+    },
+    {
+      "id": "call-cfefbf3f81789a4b",
+      "label": "Band call: leon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 41548,
+      "rate": 12000
+    },
+    {
+      "id": "call-8d69e861d61c83a2",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 23229,
+      "rate": 12000
+    },
+    {
+      "id": "call-07dad3bf140f9cc4",
+      "label": "Band call: eldon",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "eldon"
+      ],
+      "samples": 9341,
+      "rate": 12000
+    },
+    {
+      "id": "call-20d0636f3ab98ce0",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 22032,
+      "rate": 12000
+    },
+    {
+      "id": "call-cad45e182da1b945",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 8263,
+      "rate": 12000
+    },
+    {
+      "id": "call-a943b6cd46af0a98",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 8383,
+      "rate": 12000
+    },
+    {
+      "id": "call-d586dd3af1f78088",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 8742,
+      "rate": 12000
+    },
+    {
+      "id": "call-afe52148fd6060d7",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 8982,
+      "rate": 12000
+    },
+    {
+      "id": "call-635936959e2ca0da",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 13771,
+      "rate": 12000
+    },
+    {
+      "id": "call-f12208d7d405b54c",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 19278,
+      "rate": 12000
+    },
+    {
+      "id": "call-efd18ad4e5e0e3ca",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 26701,
+      "rate": 12000
+    },
+    {
+      "id": "call-9c9e8b087f4748f5",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 13531,
+      "rate": 12000
+    },
+    {
+      "id": "call-c367b41336fea3f8",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 20116,
+      "rate": 12000
+    },
+    {
+      "id": "call-7bf02e6f465590f6",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "encouragement",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 21314,
+      "rate": 12000
+    },
+    {
+      "id": "call-13aee42b9e887199",
+      "label": "Band call: kelso",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "kelso"
+      ],
+      "samples": 18081,
+      "rate": 12000
+    },
+    {
+      "id": "call-adcd4212e40f2ee7",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 26103,
+      "rate": 12000
+    },
+    {
+      "id": "call-8227252ec67ee978",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 27360,
+      "rate": 12000
+    },
+    {
+      "id": "call-9e48b243c788523e",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 18480,
+      "rate": 12000
+    },
+    {
+      "id": "call-99bc874ad593e289",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 7561,
+      "rate": 12000
+    },
+    {
+      "id": "call-39c0a69eef4be24e",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 12480,
+      "rate": 12000
+    },
+    {
+      "id": "call-9c85d91a47fdf24b",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 13920,
+      "rate": 12000
+    },
+    {
+      "id": "call-a034fb5ee9947d3e",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 18000,
+      "rate": 12000
+    },
+    {
+      "id": "call-a5ec2f4124b5bab9",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 14880,
+      "rate": 12000
+    },
+    {
+      "id": "call-c0bb1cc44ca9cea7",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 18000,
+      "rate": 12000
+    },
+    {
+      "id": "call-0251b4105922523f",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 13561,
+      "rate": 12000
+    },
+    {
+      "id": "call-d3eed4954de5689e",
+      "label": "AH-HA!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 23280,
+      "rate": 12000
+    },
+    {
+      "id": "call-4e63508a7e18b75e",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 11401,
+      "rate": 12000
+    },
+    {
+      "id": "call-8bc2b0ba64761091",
+      "label": "YEAH!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 7440,
+      "rate": 12000
+    },
+    {
+      "id": "call-d90473ad64cbb135",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 14640,
+      "rate": 12000
+    },
+    {
+      "id": "call-7c20921bc4580774",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 24960,
+      "rate": 12000
+    },
+    {
+      "id": "call-1709d6fb83280c60",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 8880,
+      "rate": 12000
+    },
+    {
+      "id": "call-3240a943d27a1ca7",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 9961,
+      "rate": 12000
+    },
+    {
+      "id": "call-7b3efb82de67d9f6",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 8041,
+      "rate": 12000
+    },
+    {
+      "id": "call-3dd3575512da30fc",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 12841,
+      "rate": 12000
+    },
+    {
+      "id": "call-c665898821906e1f",
+      "label": "Ah-ha!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 20160,
+      "rate": 12000
+    },
+    {
+      "id": "call-51c5cce66f2bdccd",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 14281,
+      "rate": 12000
+    },
+    {
+      "id": "call-9e29f55b7418ef67",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 10441,
+      "rate": 12000
+    },
+    {
+      "id": "call-542656655e036ab2",
+      "label": "Yeah!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 18841,
+      "rate": 12000
+    },
+    {
+      "id": "call-7875bcc3ce7752f7",
+      "label": "ah that fiddling man",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 27360,
+      "rate": 12000
+    },
+    {
+      "id": "call-1ef2a623a8490d67",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 20281,
+      "rate": 12000
+    },
+    {
+      "id": "call-db282a33792a2ef5",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 16080,
+      "rate": 12000
+    },
+    {
+      "id": "call-c784fe3259881a57",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 33360,
+      "rate": 12000
+    },
+    {
+      "id": "call-7d5106b37061854d",
+      "label": "now jessie",
+      "pad_label": "BAND CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "jesse"
+      ],
+      "samples": 16080,
+      "rate": 12000
+    },
+    {
+      "id": "call-42e5612afc2c7a33",
+      "label": "Look out Leon",
+      "pad_label": "BAND CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "leon"
+      ],
+      "samples": 20761,
+      "rate": 12000
+    },
+    {
+      "id": "call-b302d1a1d27cebd1",
+      "label": "ah jessie",
+      "pad_label": "BAND CALL",
+      "family": "named_player_cue",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "jesse"
+      ],
+      "samples": 20521,
+      "rate": 12000
+    },
+    {
+      "id": "call-4a1993e7721c74ac",
+      "label": "Ah-ha!",
+      "pad_label": "AH-HA!",
+      "family": "signature_aah_haa",
+      "pool_flags": 5,
+      "cue_target_characters": [],
+      "samples": 23760,
+      "rate": 12000
+    },
+    {
+      "id": "call-90ec493d9527cd1c",
+      "label": "BOB CALL",
+      "pad_label": "BOB CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 4,
+      "cue_target_characters": [],
+      "samples": 12960,
+      "rate": 12000
+    },
+    {
+      "id": "call-e2bed33218af1e8f",
+      "label": "Ah!",
+      "pad_label": "AH!",
+      "family": "ah",
+      "pool_flags": 12,
+      "cue_target_characters": [],
+      "samples": 8640,
+      "rate": 12000
+    },
+    {
+      "id": "call-4877931a12372f75",
+      "label": "Yeah!",
+      "pad_label": "YEAH!",
+      "family": "yeah",
+      "pool_flags": 6,
+      "cue_target_characters": [],
+      "samples": 7680,
+      "rate": 12000
+    },
+    {
+      "id": "call-df006af023fc0272",
+      "label": "Play it Al",
+      "pad_label": "BAND CALL",
+      "family": "uncertain_vocal",
+      "pool_flags": 36,
+      "cue_target_characters": [
+        "al"
+      ],
+      "samples": 23401,
+      "rate": 12000
+    }
+  ],
+  "samples": [
+    {
+      "class": "feature",
+      "role": "fiddle",
+      "character_id": null,
+      "character_assignment_status": "unassigned",
+      "duration_seconds": 18.0,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "fiddle",
+      "character_id": "bob",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 8.55775,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "fiddle",
+      "character_id": null,
+      "character_assignment_status": "unassigned",
+      "duration_seconds": 15.172166666666667,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "fiddle",
+      "character_id": null,
+      "character_assignment_status": "unassigned",
+      "duration_seconds": 15.958333333333334,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "herb",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 18.0,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "guitar",
+      "character_id": null,
+      "character_assignment_status": "unassigned",
+      "duration_seconds": 14.858916666666667,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 16.913916666666665,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 12.57175,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 16.968583333333335,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 53.2595,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 7.744833333333333,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 15.189833333333333,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "horns",
+      "character_id": null,
+      "character_assignment_status": "unassigned",
+      "duration_seconds": 18.0,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 17.67075,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 18.89,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 10.56,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 22.0,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "leon",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 13.0,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "joaquin",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 20.68,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "fiddle",
+      "character_id": null,
+      "character_assignment_status": "unassigned",
+      "duration_seconds": 18.0,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": null,
+      "character_assignment_status": "unassigned",
+      "duration_seconds": 40.4,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "noel",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 20.0,
+      "rate": 12000
+    },
+    {
+      "class": "feature",
+      "role": "steel",
+      "character_id": "noel",
+      "character_assignment_status": "working_match",
+      "duration_seconds": 20.0,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_piano",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 17.378333333333334,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 33.53941666666667,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 22.40525,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_piano",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 22.40525,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 43.651583333333335,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 17.204166666666666,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 34.445,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 16.960333333333335,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 16.5775,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_piano",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 16.5775,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 18.27316666666667,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 9.997333333333334,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 16.968583333333335,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_band",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 17.477916666666665,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_band",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 17.358833333333333,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 7.744833333333333,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_piano",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 7.744833333333333,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 14.792166666666667,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_piano",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 14.792166666666667,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_rhythm",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 14.710583333333334,
+      "rate": 12000
+    },
+    {
+      "class": "backing",
+      "role": "ensemble_piano",
+      "character_id": null,
+      "character_assignment_status": "ensemble",
+      "duration_seconds": 14.710583333333334,
+      "rate": 12000
+    }
+  ]
+}
